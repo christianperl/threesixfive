@@ -1,0 +1,33 @@
+
+<div class="day">
+
+  <span>{{date}}</span>
+
+  <br><br>
+  <div class="recipies">
+
+    <app-recipe-view style="width: 300px" [view]="'day'" [title]="'Breakfast'" (click)="clickOnRecipie()"></app-recipe-view>
+    <app-recipe-view style="width: 300px" [view]="'day'" [title]="'Lunch'" (click)="clickOnRecipie()"></app-recipe-view>
+    <app-recipe-view style="width: 300px" [view]="'day'" [title]="'Dinner'" (click)="clickOnRecipie()"></app-recipe-view>
+
+
+
+  </div>
+
+
+  <div class="recipie-view" *ngIf="recipieView">
+
+    <br>
+
+    <app-recipe-view  [view]="'solo'" styleClass="ui-card-shadow">
+
+
+    </app-recipe-view>
+    <br>
+    <button pButton type="button" label="Cancel" icon="pi pi-times" class="ui-button-secondary" (click)="cancel()"></button>
+
+
+  </div>
+</div>
+
+
