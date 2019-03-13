@@ -1,4 +1,4 @@
-﻿<p-card header="Login" [style]="{width: '400px', margin: '50px auto'}" styleClass="ui-card-shadow">
+﻿﻿<p-card header="Login" [style]="{width: '400px', margin: '50px auto'}" styleClass="ui-card-shadow">
   <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)">
 
 
@@ -32,7 +32,7 @@
 
     <p-footer>
       <div class="form-group" style="margin-top: 25px">
-        <button pButton label="Login" type="submit" icon="pi pi-sign-in" style="margin-right: .45em"
+        <button pButton label="Login" type="submit" icon="pi pi-sign-in" style="margin-right: .45em; color: white"
                 [disabled]="!loginForm.valid"></button>
         <a routerLink="/register" class="btn btn-link">Register</a>
       </div>

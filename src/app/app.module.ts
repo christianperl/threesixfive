@@ -34,6 +34,7 @@ import {CheckboxModule} from 'primeng/checkbox';
 import {MessagesModule} from 'primeng/messages';
 import {MessageModule} from 'primeng/message';
 import {ToggleButtonModule} from 'primeng/togglebutton';
+import {SpinnerModule} from 'primeng/spinner';
 
 // used to create fake backend
 import { fakeBackendProvider } from './login/_helpers';
@@ -82,6 +83,8 @@ import {TabViewModule} from 'primeng/tabview';
     HttpClientModule,
     SelectButtonModule,
     CardModule,
+    SpinnerModule,
+
     ButtonModule,
     InputTextModule,
     CardModule,
@@ -92,7 +95,7 @@ import {TabViewModule} from 'primeng/tabview';
     MessageModule,
     MessagesModule,
     ToggleButtonModule,
-    TabViewModule
+    TabViewModule,
   ],
   providers: [GroceryListService,
     // { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
