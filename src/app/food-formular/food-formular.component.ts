@@ -3,6 +3,7 @@ import {first} from 'rxjs/operators';
 import {Router} from '@angular/router';
 import {SelectItem} from 'primeng/api';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {forEach} from '@angular/router/src/utils/collection';
 
 @Component({
   selector: 'app-food-formular',
@@ -27,10 +28,17 @@ export class FoodFormularComponent implements OnInit {
   selectedNogos: any;
 
   selectedMeals: string;
-
   val1 = 1;
 
-  selectedDays: string[] = ['Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag', 'Sonntag'];
+  checkmonday: boolean = false;
+  checktuesday: boolean = false;
+  checkwednesday: boolean = false;
+  checkthursday: boolean = false;
+  checkfriday: boolean = false;
+  checksaturday: boolean = false;
+  checksunday: boolean = false;
+
+  formObject;
 
   constructor(
     private router: Router,
@@ -96,13 +104,31 @@ export class FoodFormularComponent implements OnInit {
 
   ngOnInit() {
     this.foodForm = new FormGroup(
-      {persons: new FormControl()
+      {
+        persons: new FormControl()
       });
+  }
+
+  // Hilfsmethode um values in objekte zu bekommen
+  iterateThroughObject(Object) {
+    const result: any[] = [];
+    for (const value of Object) {
+      result.push(value.value);
+    }
+    return result;
   }
 
   onSubmit(value: string) {
     this.submitted = true;
     this.router.navigate(['/plan']);
+    this.formObject = {
+      'diets': this.iterateThroughObject(this.selectedDiets),
+      'categories': this.iterateThroughObject(this.selectedNogos),
+      'allergens':  this.iterateThroughObject(this.selectedAllergie),
+      'plan': ''
+    };
+
+    console.log(JSON.stringify(this.formObject));
   }
 
 

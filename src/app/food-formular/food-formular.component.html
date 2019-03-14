@@ -1,9 +1,3 @@
-<!--<form [formGroup]="foodForm" (ngSubmit)="onSubmit()">
-  <div class="form-group">
-    <button [disabled]="loading" class="btn btn-primary" (click)="onSubmit()">Submit</button>
-    <img *ngIf="loading" class="pl-3" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
-  </div>
-</form>-->
 <form [formGroup]="foodForm" (ngSubmit)="onSubmit()">
   <div class="foodformtitle">
     <h1>Your Plan</h1>
@@ -40,8 +34,8 @@
         <h2>Choose on which Days you are cooking at Home</h2>
         <div class="ui-g" style="flex-wrap: wrap">
           <div class="tooglebuttongrid" style="">
-            <p-checkbox name="days" value="Montag" label="Monday" [(ngModel)]="selectedDays"
-                        [ngModelOptions]="{standalone: true}" inputId="montag"></p-checkbox>
+            <p-checkbox name="days" value="Montag" label="Monday"
+                        inputId="montag" [(ngModel)]="checkmonday"  binary="true" [ngModelOptions]="{standalone: true}"></p-checkbox>
             <div style="display:grid">
               <p-toggleButton [(ngModel)]="checked11" [ngModelOptions]="{standalone: true}" onLabel="Breakfast"
                               offLabel="Breakfast"
@@ -63,9 +57,8 @@
 
           </div>
           <div class="tooglebuttongrid" style="">
-            <p-checkbox name="days" value="Dienstag" label="Tuesday" [(ngModel)]="selectedDays"
-                        [ngModelOptions]="{standalone: true}"
-                        inputId="dienstag"></p-checkbox>
+            <p-checkbox name="days" value="Dienstag" label="Tuesday"
+                        inputId="dienstag" [(ngModel)]="checktuesday"  binary="true" [ngModelOptions]="{standalone: true}"></p-checkbox>
             <div style="display:grid">
               <p-toggleButton [(ngModel)]="checked12" [ngModelOptions]="{standalone: true}" onLabel="Breakfast"
                               offLabel="Breakfast"
@@ -86,9 +79,8 @@
             </div>
           </div>
           <div class="tooglebuttongrid" style="">
-            <p-checkbox name="days" value="Mittwoch" label="Wednesday" [(ngModel)]="selectedDays"
-                        [ngModelOptions]="{standalone: true}"
-                        inputId="mittwoch"></p-checkbox>
+            <p-checkbox name="days" value="Mittwoch" label="Wednesday"
+                        inputId="mittwoch" [(ngModel)]="checkwednesday"  binary="true" [ngModelOptions]="{standalone: true}"></p-checkbox>
             <div style="display:grid">
               <p-toggleButton [(ngModel)]="checked13" [ngModelOptions]="{standalone: true}" onLabel="Breakfast"
                               offLabel="Breakfast"
@@ -109,9 +101,8 @@
             </div>
           </div>
           <div class="tooglebuttongrid" style="">
-            <p-checkbox name="days" value="Donnerstag" label="Thursday" [(ngModel)]="selectedDays"
-                        [ngModelOptions]="{standalone: true}"
-                        inputId="donnerstag"></p-checkbox>
+            <p-checkbox name="days" value="Donnerstag" label="Thursday"
+                        inputId="donnerstag" [(ngModel)]="checkthursday"  binary="true" [ngModelOptions]="{standalone: true}"></p-checkbox>
             <div style="display:grid">
               <p-toggleButton [(ngModel)]="checked14" [ngModelOptions]="{standalone: true}" onLabel="Breakfast"
                               offLabel="Breakfast"
@@ -132,8 +123,8 @@
             </div>
           </div>
           <div class="tooglebuttongrid" style="">
-            <p-checkbox name="days" value="Freitag" label="Friday" [(ngModel)]="selectedDays"
-                        inputId="freitag"></p-checkbox>
+            <p-checkbox name="days" value="Freitag" label="Friday"
+                        inputId="freitag" [(ngModel)]="checkfriday"  binary="true" [ngModelOptions]="{standalone: true}"></p-checkbox>
             <div style="display:grid" >
               <p-toggleButton [(ngModel)]="checked15" [ngModelOptions]="{standalone: true}"   onLabel="Breakfast"
                               offLabel="Breakfast"
@@ -154,8 +145,8 @@
             </div>
           </div>
           <div class="tooglebuttongrid" style="">
-            <p-checkbox name="days" value="Samstag" label="Saturday" [(ngModel)]="selectedDays"
-                        [ngModelOptions]="{standalone: true}" inputId="samstag"></p-checkbox>
+            <p-checkbox name="days" value="Samstag" label="Saturday"
+                        inputId="samstag" [(ngModel)]="checksaturday"  binary="true" [ngModelOptions]="{standalone: true}"></p-checkbox>
             <div style="display:grid">
               <p-toggleButton [(ngModel)]="checked16" [ngModelOptions]="{standalone: true}" onLabel="Breakfast"
                               offLabel="Breakfast"
@@ -176,8 +167,8 @@
             </div>
           </div>
           <div class="tooglebuttongrid" style="">
-            <p-checkbox name="days" value="Sonntag" label="Sunday" [(ngModel)]="selectedDays"
-                        [ngModelOptions]="{standalone: true}" inputId="sonntag"></p-checkbox>
+            <p-checkbox name="days" value="Sonntag" label="Sunday"
+                        inputId="sonntag" [(ngModel)]="checksunday"  binary="true" [ngModelOptions]="{standalone: true}"></p-checkbox>
             <div style="display:grid">
               <p-toggleButton [(ngModel)]="checked17" [ngModelOptions]="{standalone: true}" onLabel="Breakfast"
                               offLabel="Breakfast"

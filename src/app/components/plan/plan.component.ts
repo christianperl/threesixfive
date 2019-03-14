@@ -62,20 +62,17 @@ export class PlanComponent implements OnInit {
     };
     const b = moment().format('dddd');
     const a = this.days[b];
-    console.log(b + a + '');
     const monday = moment().subtract(a, 'days').format('MMM Do YY');
     const woche = [];
     for (let i = 0; i < 7; i++) {
       woche.push(moment().add(i - a, 'days'));
     }
     this.week = woche;
-    console.log(this.week);
   }
 
   calenderIsClicked() {
     this.service.dayIsClicked(this.dateValue);
     this.clickedDate = this.service.clickedDate;
-    console.log(this.clickedDate);
     this.service.viewDay();
     this.key = this.service.actualView;
   }
@@ -100,14 +97,11 @@ export class PlanComponent implements OnInit {
   getWeek() {
     const b = moment().format('dddd');
     const a = this.days[b];
-    console.log(b + a + '');
     const monday = moment().subtract(a, 'days').format('MMM Do YY');
-    console.log(monday);
     const woche = [];
     for (let i = 0; i < 7; i++) {
       woche.push(moment().add(i - a, 'days'));
     }
-    console.log(woche);
     this.week = woche;
   }
   showDate(date) {
@@ -115,6 +109,5 @@ export class PlanComponent implements OnInit {
     this.clickedDate = this.service.clickedDate;
     this.service.viewDay();
     this.key = this.service.actualView;
-    console.log('kjk');
   }
 }
