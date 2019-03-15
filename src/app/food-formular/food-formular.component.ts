@@ -169,23 +169,39 @@ export class FoodFormularComponent implements OnInit {
     }
     const meals = ['Breakfast', 'Lunch', 'Dinner', 'Snack'];
     const checkedMeals = [];
-    console.log(booleanDays.length);
+    const result = new Map();
 
     for (let x = 0; x < booleanDays.length; x++) {
       if (booleanDays[x] === true) {
         for (let a = 1; a < 5; a++) {
-          console.log(this.checkedObj['checked' + a + (x + 1) ], 'checked' + a + (x + 1) );
           if (this.checkedObj['checked' + a + (x + 1) ] === true) {
             checkedMeals.push('checked' + a + (x + 1) );
           }
         }
-        /*console.log('checked1' + (x + 1), this.checkedObj['checked1' + (x + 1)])
-        console.log('checked2' + (x + 1), this.checkedObj['checked2' + (x + 1)])
-        console.log('checked3' + (x + 1), this.checkedObj['checked3' + (x + 1)])
-        console.log('checked4' + (x + 1), this.checkedObj['checked4' + (x + 1)])*/
-        console.log(checkedMeals);
       }
     }
+    for (let a = 0; a < clickedDays.length; a++) {
+      for (let b = 0; b < checkedMeals.length; b++) {
+        if (checkedMeals[b].charAt(8) == helper[clickedDays[a]]) {
+          if (result.has(clickedDays[a])) {
+            let types =  result.get(clickedDays[a]);
+            types.push(meals[(checkedMeals[b].charAt(7)) - 1]);
+            result.set(clickedDays[a], types);
+          } else {
+            result.set(clickedDays[a], Array.of(meals[(checkedMeals[b].charAt(7)) - 1] ));
+          }
+        }
+      }
+    }
+    return result;
+  }
+  MaptoJson (map) {
+    let result = [];
+    map.forEach((value, key) => {
+      result.push({ weekday: key, meals: value });
+    });
+
+    return result;
   }
 
   onSubmit(value: string) {
@@ -195,7 +211,7 @@ export class FoodFormularComponent implements OnInit {
       'diets': this.iterateThroughObject(this.selectedDiets),
       'categories': this.iterateThroughObject(this.selectedNogos),
       'allergens': this.iterateThroughObject(this.selectedAllergie),
-      'plan': ''
+      'plan': this.MaptoJson(this.buildDays())
     };
 
     this.buildDays();
