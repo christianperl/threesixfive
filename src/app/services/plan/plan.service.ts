@@ -30,7 +30,8 @@ export class PlanService {
   sendForm(json) {
     const httpOptions = {
       headers: new HttpHeaders({
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Authentication' : JSON.parse(localStorage.getItem('currentUser')).api_token
       })
     };
     return this.http.post(`${environment.apiUrl}/user/register`, json, httpOptions)
