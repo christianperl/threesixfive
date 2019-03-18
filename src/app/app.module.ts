@@ -18,9 +18,9 @@ import {CheckedEntryComponent} from './components/list/checked-entry/checked-ent
 import {DayViewComponent} from './components/plan/day-view/day-view.component';
 import {RecipeViewComponent} from './components/recipe-view/recipe-view.component';
 import {MatExpansionModule} from '@angular/material/expansion';
-import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import {BrowserModule} from '@angular/platform-browser';
+import {ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import {MatDialogModule} from '@angular/material/dialog';
 import {SelectButtonModule} from 'primeng/selectbutton';
 import {CardModule} from 'primeng/card';
@@ -35,19 +35,20 @@ import {MessagesModule} from 'primeng/messages';
 import {MessageModule} from 'primeng/message';
 import {ToggleButtonModule} from 'primeng/togglebutton';
 import {SpinnerModule} from 'primeng/spinner';
+import {RadioButtonModule} from 'primeng/radiobutton';
 
 // used to create fake backend
-import { fakeBackendProvider } from './login/_helpers';
+import {fakeBackendProvider} from './login/_helpers';
 
 
-import { AlertComponent } from './login/_components';
+import {AlertComponent} from './login/_components';
 // import { JwtInterceptor, ErrorInterceptor } from './login/_helpers';
-import { HomeComponent } from './login/home';
-import { LoginComponent } from './login/login';
-import { RegisterComponent } from './login/register';
-import { MainApplicationComponent } from './components/main-application/main-application.component';
-import { TopbarComponent } from './components/topbar/topbar.component';
-import { FoodFormularComponent } from './food-formular/food-formular.component';
+import {HomeComponent} from './login/home';
+import {LoginComponent} from './login/login';
+import {RegisterComponent} from './login/register';
+import {MainApplicationComponent} from './components/main-application/main-application.component';
+import {TopbarComponent} from './components/topbar/topbar.component';
+import {FoodFormularComponent} from './food-formular/food-formular.component';
 import {TabViewModule} from 'primeng/tabview';
 
 
@@ -84,7 +85,7 @@ import {TabViewModule} from 'primeng/tabview';
     SelectButtonModule,
     CardModule,
     SpinnerModule,
-
+    RadioButtonModule,
     ButtonModule,
     InputTextModule,
     CardModule,

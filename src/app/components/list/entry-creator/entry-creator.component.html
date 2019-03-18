@@ -24,13 +24,18 @@
 
 <form class="example-form">
   <div class="ui-inputgroup">
-    <span class="ui-inputgroup-addon"><i class="pi-pencil"></i></span>
-    <input type="text" pInputText placeholder="Grocery">
+    <input type="text" [(ngModel)]="name"  placeholder="Grocery">
   </div>
   <div class="ui-inputgroup">
 
     <p-spinner size="30" [(ngModel)]="amount"></p-spinner>
   </div>
 
+  <div class="ui-inputgroup">
+    <p-radioButton name="groupname" value="litre" [(ngModel)]="unit">litre</p-radioButton><br>
+    <p-radioButton name="groupname" value="gram" [(ngModel)]="unit">gram</p-radioButton>
+  </div>
+
+  <p-button (click)="addToList()"></p-button>
 
 </form>

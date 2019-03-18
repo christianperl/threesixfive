@@ -4,6 +4,8 @@ import {Router} from '@angular/router';
 import {SelectItem} from 'primeng/api';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {forEach} from '@angular/router/src/utils/collection';
+import {AuthenticationService} from '../login/_services';
+import {PlanService} from '../services/plan/plan.service';
 
 @Component({
   selector: 'app-food-formular',
@@ -71,7 +73,8 @@ export class FoodFormularComponent implements OnInit {
   formObject;
 
   constructor(
-    private router: Router,
+    private router: Router,    private planService: PlanService,
+
   ) {
 
     this.meals = [
@@ -126,10 +129,18 @@ export class FoodFormularComponent implements OnInit {
       {value: 'Tomatoes', label: 'Tomatoes', name: 'Tomatoes', nogo: 'tomatoes.svg'}
     ];
   }
-
-
   clear() {
     this.selectedMeals = null;
+  }
+  clearCheckedMeals() {
+    const dayModels = [this.checkmonday, this.checktuesday, this.checkwednesday, this.checkthursday,
+      this.checkfriday, this.checksaturday, this.checksunday];
+    const mealModels  = [this.checkedObj[1], this.checkedObj[2], this.checkedObj[3], this.checkedObj[4]];
+    for (let a = 0 ; a < mealModels.length; a++) {
+      if (!dayModels[0]) {
+        mealModels[a] = false;
+      }
+    }
   }
 
   ngOnInit() {
@@ -196,7 +207,7 @@ export class FoodFormularComponent implements OnInit {
     return result;
   }
   MaptoJson (map) {
-    let result = [];
+    const result = [];
     map.forEach((value, key) => {
       result.push({ weekday: key, meals: value });
     });
@@ -215,7 +226,7 @@ export class FoodFormularComponent implements OnInit {
     };
 
     this.buildDays();
-    console.log(JSON.stringify(this.formObject));
+    this.planService.sendForm(JSON.stringify(this.formObject));
   }
 
 

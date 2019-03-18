@@ -40,18 +40,18 @@
               <p-toggleButton [(ngModel)]="checkedObj.checked11" [ngModelOptions]="{standalone: true}" onLabel="Breakfast"
                               offLabel="Breakfast"
                               onIcon="pi pi-check"
-                              offIcon="pi pi-times" [style]="{'width':'104px' , 'margin-top':'20px'}"></p-toggleButton>
+                              offIcon="pi pi-times" [disabled]="!checkmonday" [style]="{'width':'104px' , 'margin-top':'20px'}"></p-toggleButton>
               <p-toggleButton [(ngModel)]="checkedObj.checked21" [ngModelOptions]="{standalone: true}" onLabel="Lunch"
                               offLabel="Lunch"
-                              onIcon="pi pi-check" offIcon="pi pi-times"
+                              onIcon="pi pi-check" offIcon="pi pi-times" [disabled]="!checkmonday"
                               [style]="{'width':'104px' , 'margin-top':'20px'}"></p-toggleButton>
               <p-toggleButton [(ngModel)]="checkedObj.checked31" [ngModelOptions]="{standalone: true}" onLabel="Dinner"
                               offLabel="Dinner"
-                              onIcon="pi pi-check" offIcon="pi pi-times"
+                              onIcon="pi pi-check" offIcon="pi pi-times" [disabled]="!checkmonday"
                               [style]="{'width':'104px' , 'margin-top':'20px'}"></p-toggleButton>
               <p-toggleButton [(ngModel)]="checkedObj.checked41" [ngModelOptions]="{standalone: true}" onLabel="Snack"
                               offLabel="Snack"
-                              onIcon="pi pi-check" offIcon="pi pi-times"
+                              onIcon="pi pi-check" offIcon="pi pi-times" [disabled]="!checkmonday"
                               [style]="{'width':'104px' , 'margin-top':'20px'}"></p-toggleButton>
             </div>
 
@@ -63,18 +63,18 @@
               <p-toggleButton [(ngModel)]="checkedObj.checked12" [ngModelOptions]="{standalone: true}" onLabel="Breakfast"
                               offLabel="Breakfast"
                               onIcon="pi pi-check"
-                              offIcon="pi pi-times" [style]="{'width':'104px' , 'margin-top':'20px'}"></p-toggleButton>
+                              offIcon="pi pi-times" [disabled]="!checktuesday" [style]="{'width':'104px' , 'margin-top':'20px'}"></p-toggleButton>
               <p-toggleButton [(ngModel)]="checkedObj.checked22" [ngModelOptions]="{standalone: true}" onLabel="Lunch"
                               offLabel="Lunch"
-                              onIcon="pi pi-check" offIcon="pi pi-times"
+                              onIcon="pi pi-check" offIcon="pi pi-times" [disabled]="!checktuesday"
                               [style]="{'width':'104px' , 'margin-top':'20px'}"></p-toggleButton>
               <p-toggleButton [(ngModel)]="checkedObj.checked32" [ngModelOptions]="{standalone: true}" onLabel="Dinner"
                               offLabel="Dinner"
-                              onIcon="pi pi-check" offIcon="pi pi-times"
+                              onIcon="pi pi-check" offIcon="pi pi-times" [disabled]="!checktuesday"
                               [style]="{'width':'104px' , 'margin-top':'20px'}"></p-toggleButton>
               <p-toggleButton [(ngModel)]="checkedObj.checked42" [ngModelOptions]="{standalone: true}" onLabel="Snack"
                               offLabel="Snack"
-                              onIcon="pi pi-check" offIcon="pi pi-times"
+                              onIcon="pi pi-check" offIcon="pi pi-times" [disabled]="!checktuesday"
                               [style]="{'width':'104px' , 'margin-top':'20px'}"></p-toggleButton>
             </div>
           </div>
@@ -84,19 +84,19 @@
             <div style="display:grid">
               <p-toggleButton [(ngModel)]="checkedObj.checked13" [ngModelOptions]="{standalone: true}" onLabel="Breakfast"
                               offLabel="Breakfast"
-                              onIcon="pi pi-check"
+                              onIcon="pi pi-check" [disabled]="!checkwednesday"
                               offIcon="pi pi-times" [style]="{'width':'104px' , 'margin-top':'20px'}"></p-toggleButton>
               <p-toggleButton [(ngModel)]="checkedObj.checked23" [ngModelOptions]="{standalone: true}" onLabel="Lunch"
                               offLabel="Lunch"
-                              onIcon="pi pi-check" offIcon="pi pi-times"
+                              onIcon="pi pi-check" offIcon="pi pi-times" [disabled]="!checkwednesday"
                               [style]="{'width':'104px' , 'margin-top':'20px'}"></p-toggleButton>
               <p-toggleButton [(ngModel)]="checkedObj.checked33" [ngModelOptions]="{standalone: true}" onLabel="Dinner"
                               offLabel="Dinner"
-                              onIcon="pi pi-check" offIcon="pi pi-times"
+                              onIcon="pi pi-check" offIcon="pi pi-times" [disabled]="!checkwednesday"
                               [style]="{'width':'104px' , 'margin-top':'20px'}"></p-toggleButton>
               <p-toggleButton [(ngModel)]="checkedObj.checked43" [ngModelOptions]="{standalone: true}" onLabel="Snack"
                               offLabel="Snack"
-                              onIcon="pi pi-check" offIcon="pi pi-times"
+                              onIcon="pi pi-check" offIcon="pi pi-times" [disabled]="!checkwednesday"
                               [style]="{'width':'104px' , 'margin-top':'20px'}"></p-toggleButton>
             </div>
           </div>
@@ -106,18 +106,18 @@
             <div style="display:grid">
               <p-toggleButton [(ngModel)]="checkedObj.checked14" [ngModelOptions]="{standalone: true}" onLabel="Breakfast"
                               offLabel="Breakfast"
-                              onIcon="pi pi-check"
+                              onIcon="pi pi-check" [disabled]="!checkthursday"
                               offIcon="pi pi-times" [style]="{'width':'104px' , 'margin-top':'20px'}"></p-toggleButton>
               <p-toggleButton [(ngModel)]="checkedObj.checked24" [ngModelOptions]="{standalone: true}" onLabel="Lunch"
-                              offLabel="Lunch"
+                              offLabel="Lunch" [disabled]="!checkthursday"
                               onIcon="pi pi-check" offIcon="pi pi-times"
                               [style]="{'width':'104px' , 'margin-top':'20px'}"></p-toggleButton>
               <p-toggleButton [(ngModel)]="checkedObj.checked34" [ngModelOptions]="{standalone: true}" onLabel="Dinner"
-                              offLabel="Dinner"
+                              offLabel="Dinner"  [disabled]="!checkthursday"
                               onIcon="pi pi-check" offIcon="pi pi-times"
                               [style]="{'width':'104px' , 'margin-top':'20px'}"></p-toggleButton>
               <p-toggleButton [(ngModel)]="checkedObj.checked44" [ngModelOptions]="{standalone: true}" onLabel="Snack"
-                              offLabel="Snack"
+                              offLabel="Snack" [disabled]="!checkthursday"
                               onIcon="pi pi-check" offIcon="pi pi-times"
                               [style]="{'width':'104px' , 'margin-top':'20px'}"></p-toggleButton>
             </div>
@@ -128,18 +128,18 @@
             <div style="display:grid" >
               <p-toggleButton [(ngModel)]="checkedObj.checked15" [ngModelOptions]="{standalone: true}"   onLabel="Breakfast"
                               offLabel="Breakfast"
-                              onIcon="pi pi-check"
+                              onIcon="pi pi-check" [disabled]="!checkfriday"
                               offIcon="pi pi-times" [style]="{'width':'104px' , 'margin-top':'20px'}"></p-toggleButton>
               <p-toggleButton [(ngModel)]="checkedObj.checked25" [ngModelOptions]="{standalone: true}" onLabel="Lunch"
-                              offLabel="Lunch"
+                              offLabel="Lunch" [disabled]="!checkfriday"
                               onIcon="pi pi-check" offIcon="pi pi-times"
                               [style]="{'width':'104px' , 'margin-top':'20px'}"></p-toggleButton>
               <p-toggleButton [(ngModel)]="checkedObj.checked35" [ngModelOptions]="{standalone: true}" onLabel="Dinner"
-                              offLabel="Dinner"
+                              offLabel="Dinner" [disabled]="!checkfriday"
                               onIcon="pi pi-check" offIcon="pi pi-times"
                               [style]="{'width':'104px' , 'margin-top':'20px'}"></p-toggleButton>
               <p-toggleButton [(ngModel)]="checkedObj.checked45" [ngModelOptions]="{standalone: true}" onLabel="Snack"
-                              offLabel="Snack"
+                              offLabel="Snack" [disabled]="!checkfriday"
                               onIcon="pi pi-check" offIcon="pi pi-times"
                               [style]="{'width':'104px' , 'margin-top':'20px'}"></p-toggleButton>
             </div>
@@ -150,18 +150,18 @@
             <div style="display:grid">
               <p-toggleButton [(ngModel)]="checkedObj.checked16" [ngModelOptions]="{standalone: true}" onLabel="Breakfast"
                               offLabel="Breakfast"
-                              onIcon="pi pi-check"
+                              onIcon="pi pi-check" [disabled]="!checksaturday"
                               offIcon="pi pi-times" [style]="{'width':'104px' , 'margin-top':'20px'}"></p-toggleButton>
               <p-toggleButton [(ngModel)]="checkedObj.checked26" [ngModelOptions]="{standalone: true}" onLabel="Lunch"
-                              offLabel="Lunch"
+                              offLabel="Lunch" [disabled]="!checksaturday"
                               onIcon="pi pi-check" offIcon="pi pi-times"
                               [style]="{'width':'104px' , 'margin-top':'20px'}"></p-toggleButton>
               <p-toggleButton [(ngModel)]="checkedObj.checked36" [ngModelOptions]="{standalone: true}" onLabel="Dinner"
-                              offLabel="Dinner"
+                              offLabel="Dinner" [disabled]="!checksaturday"
                               onIcon="pi pi-check" offIcon="pi pi-times"
                               [style]="{'width':'104px' , 'margin-top':'20px'}"></p-toggleButton>
               <p-toggleButton [(ngModel)]="checkedObj.checked46" [ngModelOptions]="{standalone: true}" onLabel="Snack"
-                              offLabel="Snack"
+                              offLabel="Snack" [disabled]="!checksaturday"
                               onIcon="pi pi-check" offIcon="pi pi-times"
                               [style]="{'width':'104px' , 'margin-top':'20px'}"></p-toggleButton>
             </div>
@@ -172,18 +172,18 @@
             <div style="display:grid">
               <p-toggleButton [(ngModel)]="checkedObj.checked17" [ngModelOptions]="{standalone: true}" onLabel="Breakfast"
                               offLabel="Breakfast"
-                              onIcon="pi pi-check"
+                              onIcon="pi pi-check" [disabled]="!checksunday"
                               offIcon="pi pi-times" [style]="{'width':'104px' , 'margin-top':'20px'}"></p-toggleButton>
               <p-toggleButton [(ngModel)]="checkedObj.checked27" [ngModelOptions]="{standalone: true}" onLabel="Lunch"
-                              offLabel="Lunch"
+                              offLabel="Lunch" [disabled]="!checksunday"
                               onIcon="pi pi-check" offIcon="pi pi-times"
                               [style]="{'width':'104px' , 'margin-top':'20px'}"></p-toggleButton>
               <p-toggleButton [(ngModel)]="checkedObj.checked37" [ngModelOptions]="{standalone: true}" onLabel="Dinner"
-                              offLabel="Dinner"
+                              offLabel="Dinner" [disabled]="!checksunday"
                               onIcon="pi pi-check" offIcon="pi pi-times"
                               [style]="{'width':'104px' , 'margin-top':'20px'}"></p-toggleButton>
               <p-toggleButton [(ngModel)]="checkedObj.checked47" [ngModelOptions]="{standalone: true}" onLabel="Snack"
-                              offLabel="Snack"
+                              offLabel="Snack" [disabled]="!checksunday"
                               onIcon="pi pi-check" offIcon="pi pi-times"
                               [style]="{'width':'104px' , 'margin-top':'20px'}"></p-toggleButton>
             </div>
