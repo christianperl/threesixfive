@@ -1,84 +1,119 @@
-<button (click)="viewMonth()" *ngIf="key != 'monthComponent'">viewMonth</button>
-<button (click)="viewWeek() " *ngIf="key != 'weekComponent'">viewWeek</button>
+<div class="plan-grid" [ngSwitch]="key">
 
-<div class="plan-container" [ngSwitch]="key">
+  <a (click)="viewWeek() " *ngIf="key != 'weekComponent'"
+     style="position: absolute;margin: 55px 0px;display: flex;flex-direction: column;align-items: center;"><i
+    class="pi pi-arrow-left" style="font-size: 3em; color: #4a5a62"></i><span style="color: #4a5a62">BACK</span></a>
 
 
   <div *ngSwitchCase="'monthComponent'" [@enterTrigger]="'fadeIn'">
-    <p-calendar class="calender" dateFormat="dd.mm.yy" [(ngModel)]="dateValue" [inline]="true"
-                (onSelect)="calenderIsClicked()" [touchUI]="true" [locale]="en"></p-calendar>
-  </div>
-  <div *ngSwitchCase="'weekComponent'" style="display: flex; justify-content: center">
 
-      <!--<span (click)="showDate(week[0])">{{week[0]}}</span>
-      <span (click)="showDate(week[1])">{{week[1]}}</span>
-      <span (click)="showDate(week[2])">{{week[2]}}</span>
-      <span (click)="showDate(week[3])">{{week[3]}}</span>
-      <span (click)="showDate(week[4])">{{week[4]}}</span>
-      <span (click)="showDate(week[5])">{{week[5]}}</span>
-      <span (click)="showDate(week[6])">{{week[6]}}</span>
+    <a (click)="viewWeek() " *ngIf="key != 'weekComponent'"
+       style="position: absolute;margin: 55px 0px;display: flex;flex-direction: column;align-items: center;"><i
+      class="pi pi-arrow-left" style="font-size: 3em; color: #4a5a62"></i><span style="color: #4a5a62">BACK</span></a>
+    <div class="title">
+      <h1>Month</h1>
+      <span>Click on a <a>Day</a> for more details!</span>
     </div>
--->
-<div class="week">
-  <p-card class="day">
-    <span (click)="showDate(week[0])">Monday</span>
-    <hr>
-    <p-card>
-      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-    </p-card>
-  </p-card>
-  <p-card class="day">
-    <span (click)="showDate(week[1])">Tuesday</span>
 
-    <hr>
-    <p-card>
-      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-    </p-card>
-  </p-card>
-  <p-card class="day">
-    <span (click)="showDate(week[2])">Wednesday</span>
+    <p-calendar class="calender" dateFormat="dd.mm.yy" [(ngModel)]="dateValue" [inline]="true"
+                (onSelect)="calenderIsClicked()" [locale]="en"></p-calendar>
+  </div>
 
-    <hr>
-    <p-card>
-      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-    </p-card>
-  </p-card>
-  <p-card class="day">
-    <span (click)="showDate(week[3])">Thursday</span>
 
-    <hr>
-    <p-card>
-      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-    </p-card>
-  </p-card>
-  <p-card class="day">
-    <span (click)="showDate(week[4])">Friday</span>
+  <div *ngSwitchCase="'weekComponent'">
 
-    <hr>
-    <p-card>
-      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-    </p-card>
-  </p-card>
-  <p-card class="day">
-    <span (click)="showDate(week[5])">Saturday</span>
+    <a (click)="viewMonth() " *ngIf="key != 'monthComponent'"
+       style="position: absolute;margin: 55px 0px;display: flex;flex-direction: column;align-items: center;"><i
+      class="pi pi-calendar" style="font-size: 3em; color: #4a5a62"></i><span style="color: #4a5a62">MONTH</span></a>
+    <div class="title">
+      <h1>Week</h1>
+      <span>Click on each <a>Day</a> for more details!</span>
+    </div>
 
-    <hr>
-    <p-card>
-      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-    </p-card>
-  </p-card>
-  <p-card class="day">
-    <span (click)="showDate(week[6])">Sunday</span>
+    <div class="week" style="display: flex; justify-content: center">
 
-    <hr>
-    <p-card>
-      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-    </p-card>
-  </p-card>
-</div>
+      <p-card class="day">
+        <span (click)="showDate(week[0])">Monday</span>
+        <hr>
+        <p>
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+          dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+          clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+          consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+        </p>
+      </p-card>
+      <p-card class="day">
+        <span (click)="showDate(week[1])">Tuesday</span>
+
+        <hr>
+        <p>
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+          dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+          clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+          consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+        </p>
+      </p-card>
+      <p-card class="day">
+        <span (click)="showDate(week[2])">Wednesday</span>
+
+        <hr>
+        <p>
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+          dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+          clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+          consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+        </p>
+      </p-card>
+      <p-card class="day">
+        <span (click)="showDate(week[3])">Thursday</span>
+
+        <hr>
+        <p>
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+          dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+          clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+          consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+        </p>
+      </p-card>
+      <p-card class="day">
+        <span (click)="showDate(week[4])">Friday</span>
+
+        <hr>
+        <p>
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+          dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+          clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+          consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+        </p>
+      </p-card>
+      <p-card class="day">
+        <span (click)="showDate(week[5])">Saturday</span>
+
+        <hr>
+        <p>
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+          dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+          clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+          consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+        </p>
+      </p-card>
+      <p-card class="day">
+        <span (click)="showDate(week[6])">Sunday</span>
+
+        <hr>
+        <p>
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+          dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+          clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+          consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+        </p>
+      </p-card>
+    </div>
 
   </div>
 
 
   <app-day-view [Date]="clickedDate" *ngSwitchCase="'dayComponent'">
   </app-day-view>
+
+</div>

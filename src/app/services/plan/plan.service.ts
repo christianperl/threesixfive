@@ -9,7 +9,7 @@ import {environment} from '../../../environments/environment';
 })
 export class PlanService {
   clickedDate;
-  actualView = 'monthComponent';
+  actualView = 'weekComponent';
   actualDate = new Date();
   constructor(private http: HttpClient) { }
   dayIsClicked(date) {
