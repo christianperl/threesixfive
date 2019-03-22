@@ -1,0 +1,34 @@
+{
+  "Monday": {
+    "lunch": "Chile Verde con Papas Soup",
+    "main dish": "White Bean Chicken Chili",
+    "snack": "Nut Meal Brownies"
+  },
+  "Tuesday": {
+    "breakfast": "Protein Pancakes II",
+    "lunch": "Egg Sausage Bake",
+    "main dish": "Barramundi with Olives, Tomatoes & Garlic",
+    "snack": "Banana Bread Muffins with Chocolate Chips"
+  },
+  "Wednesday": {
+    "breakfast": "Morning Smoothie",
+    "lunch": "Skinny Salmon Burgers",
+    "snack": "Fruit & Nut Milkshake"
+  },
+  "Thursday": {
+    "breakfast": "Spinach Smoothie",
+    "main dish": "Ginger Chicken Stir Fry",
+    "snack": "Cranberry Cinnamon Flax Muffins"
+  },
+  "Friday": {
+    "breakfast": "Spinach and Egg White Frittata",
+    "lunch": "Pinto Bean & Ground Beef Soup"
+  },
+  "Saturday": [],
+  "Sunday": {
+    "breakfast": "Orange Cranberry Muffin",
+    "lunch": "Quinoa Chili Verde",
+    "main dish": "Slow-Cooked Pork Roast",
+    "snack": "Morning Smoothie II"
+  }
+}
