@@ -1,4 +1,3 @@
-
 <div class="plan-grid" [ngSwitch]="key">
 
   <a (click)="viewWeek() " *ngIf="key != 'weekComponent'"
@@ -22,8 +21,6 @@
 
 
   <div *ngSwitchCase="'weekComponent'">
-
-    <p-button (click) = "getMeal()"></p-button>
     <a (click)="viewMonth() " *ngIf="key != 'monthComponent'"
        style="position: absolute;margin: 55px 0px;display: flex;flex-direction: column;align-items: center;"><i
       class="pi pi-calendar" style="font-size: 3em; color: #4a5a62"></i><span style="color: #4a5a62">MONTH</span></a>
@@ -33,6 +30,7 @@
     </div>
 
     <div class="week" style="display: flex; justify-content: center">
+
 
 
       <app-recipe-view [day]="'Monday'" [view]="'month'" (click)="showDate(week[0])">
@@ -59,7 +57,11 @@
     </div>
 
 
+
+
+  </div>
   <app-day-view [Date]="clickedDate" *ngSwitchCase="'dayComponent'">
   </app-day-view>
+
 
 </div>
