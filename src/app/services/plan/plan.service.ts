@@ -51,7 +51,7 @@ export class PlanService {
         'Authentication': JSON.parse(localStorage.getItem('currentUser')).api_token
       })
     };
-    return this.http.post(`${environment.apiUrl}/user/register`, json, httpOptions)
+    return this.http.post(`${environment.apiUrl}/form`, json, httpOptions)
       .pipe(map(response => {
         console.log(response);
       }));

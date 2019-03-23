@@ -106,7 +106,6 @@ export class PlanComponent implements OnInit {
     this.clickedDate = this.service.clickedDate;
     this.service.viewDay();
     this.key = this.service.actualView;
-    console.log(date);
   }
   getMeal() {
     return this.service.getTypeAndNameFromWeek();
