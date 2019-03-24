@@ -1,6 +1,11 @@
-﻿﻿<p-card header="Register" [style]="{width: '400px', margin: '50px auto'}" styleClass="ui-card-shadow">
-  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+﻿<div class="title">
+  <h1>Register</h1>
+  <span>Register a new <a>Account</a></span>
+</div>
 
+﻿<p-card header="" [style]="{width: '400px', margin: '50px auto'}" styleClass="ui-card-shadow" style="text-align: center">
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <img src="../../../assets/img/365_Logo_Form.png" width="100px" style="margin-top: -50px;">
     <div class="form-group" style="">
       <div class="ui-grid ui-grid-responsive ui-grid-pad ui-fluid" style="margin: 10px 0px">
         <div class="ui-grid-row">
@@ -57,7 +62,7 @@
       </div>
     </div>
 
-    <p-footer>
+    <p-footer style="text-align: left">
       <div class="form-group" style="margin-top: 25px">
         <button pButton label="Register" type="submit" icon="pi pi-check" style="margin-right: .45em; color: white" [disabled]="!registerForm.valid"></button>
         <a routerLink="/login" class="btn btn-link">Cancel</a>
