@@ -1,15 +1,15 @@
-
-
-
-
 <div class="plan-grid" [ngSwitch]="key">
 
-  <a (click)="viewWeek() " *ngIf="key != 'weekComponent'" style="position: absolute;margin: 55px 0px;display: flex;flex-direction: column;align-items: center;"><i class="pi pi-arrow-left" style="font-size: 3em; color: #4a5a62"></i><span style="color: #4a5a62">BACK</span></a>
+  <a (click)="viewWeek() " *ngIf="key != 'weekComponent'"
+     style="position: absolute;margin: 55px 0px;display: flex;flex-direction: column;align-items: center;"><i
+    class="pi pi-arrow-left" style="font-size: 3em; color: #4a5a62"></i><span style="color: #4a5a62">BACK</span></a>
 
 
   <div *ngSwitchCase="'monthComponent'" [@enterTrigger]="'fadeIn'">
 
-    <a (click)="viewWeek() " *ngIf="key != 'weekComponent'" style="position: absolute;margin: 55px 0px;display: flex;flex-direction: column;align-items: center;"><i class="pi pi-arrow-left" style="font-size: 3em; color: #4a5a62"></i><span style="color: #4a5a62">BACK</span></a>
+    <a (click)="viewWeek() " *ngIf="key != 'weekComponent'"
+       style="position: absolute;margin: 55px 0px;display: flex;flex-direction: column;align-items: center;"><i
+      class="pi pi-arrow-left" style="font-size: 3em; color: #4a5a62"></i><span style="color: #4a5a62">BACK</span></a>
     <div class="title">
       <h1>Month</h1>
       <span>Click on a <a>Day</a> for more details!</span>
@@ -21,8 +21,9 @@
 
 
   <div *ngSwitchCase="'weekComponent'">
-
-    <a (click)="viewMonth() " *ngIf="key != 'monthComponent'" style="position: absolute;margin: 55px 0px;display: flex;flex-direction: column;align-items: center;"><i class="pi pi-calendar" style="font-size: 3em; color: #4a5a62"></i><span style="color: #4a5a62">MONTH</span></a>
+    <a (click)="viewMonth() " *ngIf="key != 'monthComponent'"
+       style="position: absolute;margin: 55px 0px;display: flex;flex-direction: column;align-items: center;"><i
+      class="pi pi-calendar" style="font-size: 3em; color: #4a5a62"></i><span style="color: #4a5a62">MONTH</span></a>
     <div class="title">
       <h1>Week</h1>
       <span>Click on each <a>Day</a> for more details!</span>
@@ -30,88 +31,37 @@
 
     <div class="week" style="display: flex; justify-content: center">
 
-      <p-card class="day">
-        <span (click)="showDate(week[0])">Monday</span>
-        <hr>
-        <p>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-          dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-          clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
-          consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-        </p>
-      </p-card>
-      <p-card class="day">
-        <span (click)="showDate(week[1])">Tuesday</span>
 
-        <hr>
-        <p>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-          dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-          clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
-          consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-        </p>
-      </p-card>
-      <p-card class="day">
-        <span (click)="showDate(week[2])">Wednesday</span>
 
-        <hr>
-        <p>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-          dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-          clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
-          consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-        </p>
-      </p-card>
-      <p-card class="day">
-        <span (click)="showDate(week[3])">Thursday</span>
+      <app-recipe-view [day]="'Monday'" [view]="'month'" (click)="showDate(week[0])">
+      </app-recipe-view>
 
-        <hr>
-        <p>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-          dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-          clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
-          consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-        </p>
-      </p-card>
-      <p-card class="day">
-        <span (click)="showDate(week[4])">Friday</span>
+      <app-recipe-view [day]="'Tuesday'" [view]="'month'" (click)="showDate(week[1])">
+      </app-recipe-view>
 
-        <hr>
-        <p>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-          dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-          clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
-          consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-        </p>
-      </p-card>
-      <p-card class="day">
-        <span (click)="showDate(week[5])">Saturday</span>
+      <app-recipe-view [day]="'Wednesday'" [view]="'month'" (click)="showDate(week[2])">
+      </app-recipe-view>
 
-        <hr>
-        <p>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-          dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-          clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
-          consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-        </p>
-      </p-card>
-      <p-card class="day">
-        <span (click)="showDate(week[6])">Sunday</span>
+      <app-recipe-view [day]="'Thursday'" [view]="'month'" (click)="showDate(week[3])">
+      </app-recipe-view>
 
-        <hr>
-        <p>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-          dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-          clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
-          consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-        </p>
-      </p-card>
+      <app-recipe-view [day]="'Friday'" [view]="'month'" (click)="showDate(week[4])">
+      </app-recipe-view>
+
+      <app-recipe-view [day]="'Saturday'" [view]="'month'" (click)="showDate(week[5])">
+      </app-recipe-view>
+
+      <app-recipe-view [day]="'Sunday'" [view]="'month'" (click)="showDate(week[6])">
+      </app-recipe-view>
+
     </div>
 
+
+
+
   </div>
-
-
   <app-day-view [Date]="clickedDate" *ngSwitchCase="'dayComponent'">
   </app-day-view>
+
 
 </div>

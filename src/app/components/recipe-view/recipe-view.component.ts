@@ -1,4 +1,5 @@
 import {Component, Input, OnInit, ViewContainerRef} from '@angular/core';
+import {PlanService} from '../../services/plan/plan.service';
 
 @Component({
   selector: 'app-recipe-view',
@@ -6,15 +7,16 @@ import {Component, Input, OnInit, ViewContainerRef} from '@angular/core';
   styleUrls: ['./recipe-view.component.scss']
 })
 export class RecipeViewComponent implements OnInit {
-  @Input() title: string;
+  @Input() name: string;
   @Input() view: string;
-
-  constructor(viewContainerRef: ViewContainerRef) { }
+  @Input() type: string;
+  @Input() day: string;
+  constructor(private service: PlanService) { }
 
   ngOnInit() {
   }
-  cancel() {
-
+  getMeal() {
+    return this.service.getTypeAndNameFromWeek()[this.day];
   }
 
 }

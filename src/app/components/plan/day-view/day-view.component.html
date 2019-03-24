@@ -3,12 +3,13 @@
 
   <span>{{date}}</span>
 
+
   <br><br>
   <div class="recipies">
 
-    <app-recipe-view style="width: 300px" [view]="'day'" [title]="'Breakfast'" (click)="clickOnRecipie()"></app-recipe-view>
-    <app-recipe-view style="width: 300px" [view]="'day'" [title]="'Lunch'" (click)="clickOnRecipie()"></app-recipe-view>
-    <app-recipe-view style="width: 300px" [view]="'day'" [title]="'Dinner'" (click)="clickOnRecipie()"></app-recipe-view>
+    <app-recipe-view style="width: 300px" [view]="'day'" [type]="'Breakfast'" (click)="clickOnRecipie()"></app-recipe-view>
+    <app-recipe-view style="width: 300px" [view]="'day'" [type]="'Lunch'" (click)="clickOnRecipie()"></app-recipe-view>
+    <app-recipe-view style="width: 300px" [view]="'day'" [type]="'Dinner'" (click)="clickOnRecipie()"></app-recipe-view>
 
 
 

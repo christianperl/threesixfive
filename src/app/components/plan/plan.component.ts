@@ -4,7 +4,7 @@ import {
 } from '@angular/core';
 import {PlanService} from '../../services/plan/plan.service';
 import {animate, state, style, transition, trigger} from '@angular/animations';
-import * as moment from 'moment';
+import moment from 'moment';
 
 
 @Component({
@@ -40,10 +40,7 @@ export class PlanComponent implements OnInit {
       'Saturday': 5,
       'Sunday': 6
     };
-
-
-
-
+  iterator = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
   constructor(private service: PlanService) {
   }
 
@@ -109,5 +106,8 @@ export class PlanComponent implements OnInit {
     this.clickedDate = this.service.clickedDate;
     this.service.viewDay();
     this.key = this.service.actualView;
+  }
+  getMeal() {
+    return this.service.getTypeAndNameFromWeek();
   }
 }
