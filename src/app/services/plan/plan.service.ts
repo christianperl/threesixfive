@@ -4,8 +4,7 @@ import {User} from '../../login/_models';
 import {map} from 'rxjs/operators';
 import {environment} from '../../../environments/environment';
 import data from './response.json';
-import {forEach} from '@angular/router/src/utils/collection';
-
+import data1 from './response_day.json';
 @Injectable({
   providedIn: 'root'
 })
@@ -14,7 +13,7 @@ export class PlanService {
   actualView = 'weekComponent';
   actualDate = new Date();
   json = (<any>data);
-
+  json1 = (<any>data);
   constructor(private http: HttpClient) {
   }
 
@@ -43,6 +42,15 @@ export class PlanService {
 
     return json;
   }
+  getNameAndDescription() {
+    const json = this.json1;
+    const result = [];
+    const keys = Object.keys(data1);
+    for (let a = 0; a < keys.length; a++) {
+      result.push({[keys[a]] : Object.keys(Object.values(json)[a])});
+
+    }
+  }
 
   sendForm(json) {
     const httpOptions = {
@@ -51,7 +59,7 @@ export class PlanService {
         'Authentication': JSON.parse(localStorage.getItem('currentUser')).api_token
       })
     };
-    return this.http.post(`${environment.apiUrl}/form`, json, httpOptions)
+    return this.http.post<any>(`${environment.apiUrl}/form`, json, httpOptions)
       .pipe(map(response => {
         console.log(response);
       }));
