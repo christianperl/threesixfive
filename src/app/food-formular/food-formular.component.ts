@@ -180,7 +180,7 @@ export class FoodFormularComponent implements OnInit {
         clickedDays.push(days[i]);
       }
     }
-    const meals = ['Breakfast', 'Lunch', 'Dinner', 'Snack'];
+    const meals = ['breakfast', 'lunch', 'main dish', 'snack'];
     const checkedMeals = [];
     const result = new Map();
 
