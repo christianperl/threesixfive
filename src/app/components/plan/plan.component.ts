@@ -110,4 +110,8 @@ export class PlanComponent implements OnInit {
   getMeal() {
     return this.service.getTypeAndNameFromWeek();
   }
+  getDailyMeal() {
+    console.log(this.service.getNameAndDescription());
+    return this.service.getNameAndDescription();
+  }
 }

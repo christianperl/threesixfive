@@ -13,7 +13,7 @@ export class PlanService {
   actualView = 'weekComponent';
   actualDate = new Date();
   json = (<any>data);
-  json1 = (<any>data);
+  json1 = (<any>data1);
   constructor(private http: HttpClient) {
   }
 
@@ -44,12 +44,12 @@ export class PlanService {
   }
   getNameAndDescription() {
     const json = this.json1;
-    const result = [];
+    const result = {};
     const keys = Object.keys(data1);
     for (let a = 0; a < keys.length; a++) {
-      result.push({[keys[a]] : Object.keys(Object.values(json)[a])});
-
+      result[keys[a]] = [Object.values(json)[a]['name'], Object.values(json)[a]['description']];
     }
+    return result;
   }
 
   sendForm(json) {

@@ -236,11 +236,16 @@ export class FoodFormularComponent implements OnInit {
         'Authentication': JSON.parse(localStorage.getItem('currentUser')).api_token
       })
     };
-    console.log('Http Headers built');
-    this.http.post<any>(`${environment.apiUrl}/form`, this.formObject, httpOptions)
-      .pipe(map(response => {
-        console.log(response);
-      }));
+    console.log(`${environment.apiUrl}/user/login`);
+    this.http.post<any>(`${environment.apiUrl}/form`, JSON.stringify(this.formObject), httpOptions)
+      .pipe(first())
+      .subscribe(
+        data => {
+          console.log(data);
+        },
+        error => {
+         console.log('error');
+        });
     console.log('Http Post Request done');
   }
 
