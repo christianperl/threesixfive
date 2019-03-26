@@ -11,7 +11,7 @@ export class RecipeViewComponent implements OnInit {
   @Input() view: string;
   @Input() type: string;
   @Input() day: string;
-  constructor(private service: PlanService) { }
+  constructor(private service: PlanService) {}
 
   ngOnInit() {
   }
