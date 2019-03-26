@@ -67,7 +67,7 @@ export class PlanService {
         'Authentication': JSON.parse(localStorage.getItem('currentUser')).api_token
       })
     };
-    this.http.post<any>(`${environment.apiUrl}/form`, JSON.stringify(this.formObject), httpOptions)
+    this.http.post<any>(`${environment.apiUrl}/form`, json, httpOptions)
       .pipe(first())
       .subscribe(
         data => {
