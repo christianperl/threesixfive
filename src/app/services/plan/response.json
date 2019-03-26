@@ -1,34 +1,44 @@
 {
   "Monday": {
-    "lunch": "Chile Verde con Papas Soup",
-    "main dish": "White Bean Chicken Chili",
-    "snack": "Nut Meal Brownies"
+    "breakfast": "Cheese and Chicken Egg Wrap",
+    "lunch": "Wendy's Copycat Chili",
+    "main dish": "Roasted Turkey with Spaghetti Sauce",
+    "snack": "Chilly Chocolate"
   },
   "Tuesday": {
-    "breakfast": "Protein Pancakes II",
-    "lunch": "Egg Sausage Bake",
-    "main dish": "Barramundi with Olives, Tomatoes & Garlic",
-    "snack": "Banana Bread Muffins with Chocolate Chips"
+    "breakfast": "Strawberry Breakfast Smoothie",
+    "lunch": "Seafood Chowder",
+    "main dish": "Spaghetti Squash with Cheese and Vegetables",
+    "snack": "Tomato Guacamole"
   },
   "Wednesday": {
-    "breakfast": "Morning Smoothie",
-    "lunch": "Skinny Salmon Burgers",
-    "snack": "Fruit & Nut Milkshake"
+    "breakfast": "Breakfast Omelet",
+    "lunch": "Vegetable Soup",
+    "main dish": "Chicken a La Jules",
+    "snack": "Watermelon Sherbet"
   },
   "Thursday": {
-    "breakfast": "Spinach Smoothie",
-    "main dish": "Ginger Chicken Stir Fry",
-    "snack": "Cranberry Cinnamon Flax Muffins"
+    "breakfast": "Waffle Raspberry Sandwich",
+    "lunch": "Tilapia \"Chicken\" Salad",
+    "main dish": "Beef Curry",
+    "snack": "Chicken Lettuce Wraps"
   },
   "Friday": {
-    "breakfast": "Spinach and Egg White Frittata",
-    "lunch": "Pinto Bean & Ground Beef Soup"
+    "breakfast": "Banana Breakfast Smoothie",
+    "lunch": "Cucumber Avocado Salad",
+    "main dish": "Thai Beef Salad",
+    "snack": "Vegan Cinnamon Almond Granola Bars"
   },
-  "Saturday": [],
+  "Saturday": {
+    "breakfast": "Cinnamon Toast",
+    "lunch": "Brown Rice & Cherry Tomato Cooked Salad",
+    "main dish": "Chicken Soft Tacos",
+    "snack": "Baked Vegetables in Rosemary, Thyme & Olive Oil"
+  },
   "Sunday": {
-    "breakfast": "Orange Cranberry Muffin",
-    "lunch": "Quinoa Chili Verde",
-    "main dish": "Slow-Cooked Pork Roast",
-    "snack": "Morning Smoothie II"
+    "breakfast": "Spinach Scrambled Eggs",
+    "lunch": "Samosa Pea Soup",
+    "main dish": "Diet Cola BBQ Chicken",
+    "snack": "Whole Wheat and Oatmeal Chocolate Chip Cookies"
   }
 }

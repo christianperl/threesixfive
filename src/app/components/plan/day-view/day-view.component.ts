@@ -1,5 +1,4 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {PlanService} from '../../../services/plan/plan.service';
 
 @Component({
   selector: 'app-day-view',
@@ -13,8 +12,8 @@ export class DayViewComponent implements OnInit {
   @Input() Date;
   date: string;
   recipieView: boolean;
-  value;
-  constructor(private service: PlanService) {
+
+  constructor() {
   }
 
   ngOnInit() {
@@ -22,20 +21,11 @@ export class DayViewComponent implements OnInit {
     this.date = this.date.substring(0, 16);
   }
 
-  clickOnRecipie(type) {
+  clickOnRecipie() {
     this.recipieView = true;
-    this.value = type;
-    console.log(this.service.getSpecificInformation('breakfast'));
   }
-  getInformation() {
 
-    const key = Object.keys(this.service.getSpecificInformation(this.value))[0];
-    return {'key': key, 'values': this.service.getSpecificInformation(this.value)[key]};
-  }
   cancel() {
     this.recipieView = false;
-  }
-  getDailyMeal() {
-    return this.service.getNameAndDescription();
   }
 }

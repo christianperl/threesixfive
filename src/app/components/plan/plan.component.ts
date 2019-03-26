@@ -73,6 +73,14 @@ export class PlanComponent implements OnInit {
     this.service.viewDay();
     this.key = this.service.actualView;
   }
+
+  // viewDay() {
+  //   this.clickedDate = this.service.clickedDate;
+  //   console.log(this.clickedDate);
+  //   this.service.viewDay();
+  //   this.key = this.service.actualView;
+  // }
+
   viewMonth() {
     this.service.viewMonth();
     this.key = this.service.actualView;
@@ -98,5 +106,8 @@ export class PlanComponent implements OnInit {
     this.clickedDate = this.service.clickedDate;
     this.service.viewDay();
     this.key = this.service.actualView;
+  }
+  getMeal() {
+    return this.service.getTypeAndNameFromWeek();
   }
 }

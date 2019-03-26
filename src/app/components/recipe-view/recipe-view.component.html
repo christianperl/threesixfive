@@ -12,28 +12,22 @@
   </div>
 </div>
 
-</p-card>
 
 
 <p-card *ngIf="view == 'solo'">
-  <span>{{info.key}}</span><hr>
+  <span>{{type}}</span>
+  <span>BetterView</span>
+  <hr>
+  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+  magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+  gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing
+  elitr, sed diam nonumy eirmod tempor
 
-  <span *ngFor="let item of info.values[2]">Calories : {{(item.calories)}}<br>
-    Carbohydrate : {{item.carbohydrate}}<br>
-    Sugar : {{item.sugar}}<br>
-    Fat : {{item.fat}}<br>
-    Protein : {{item.protein}}
-  </span><hr>
-
-  <span *ngFor="let item of info.values[0]">{{(item.name + ' : ' +  item.unit + ' ' + item.measurement)}} <br></span><hr>
-  <ol>
-    <li *ngFor="let item of info.values[1]">{{item.direction_description}}</li>
-  </ol>
 
 </p-card>
 
 <p-card *ngIf="view == 'day'">
-  <span>{{type}}</span><hr>
-  <span>{{name}}</span><hr>
-  <span>{{descr}}</span>
+  <span>{{type}}</span><br>
+  <span>{{name}}</span>
+  <hr>
 </p-card>

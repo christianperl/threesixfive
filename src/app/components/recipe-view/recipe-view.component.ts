@@ -11,16 +11,11 @@ export class RecipeViewComponent implements OnInit {
   @Input() view: string;
   @Input() type: string;
   @Input() day: string;
-  @Input() descr: string;
-  @Input() info: string;
-  meal;
-  constructor(private service: PlanService) { }
+  constructor(private service: PlanService) {}
 
   ngOnInit() {
-    // this.meal = this.service.getWeek(2019,  12);
   }
   getMeal() {
-    // return this.meal[this.day];
     return this.service.getTypeAndNameFromWeek()[this.day];
   }
 
