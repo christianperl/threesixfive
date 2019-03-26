@@ -7,9 +7,12 @@
   <br><br>
   <div class="recipies">
 
-    <app-recipe-view style="width: 300px" [view]="'day'" [type]="'Breakfast'" (click)="clickOnRecipie()"></app-recipe-view>
-    <app-recipe-view style="width: 300px" [view]="'day'" [type]="'Lunch'" (click)="clickOnRecipie()"></app-recipe-view>
-    <app-recipe-view style="width: 300px" [view]="'day'" [type]="'Dinner'" (click)="clickOnRecipie()"></app-recipe-view>
+    <app-recipe-view *ngFor="let item of getDailyMeal() | keyvalue"
+                     style="width: 300px" [view]="'day'" [type] = item.key
+                     [name]="item.value[0]" [descr]="item.value[1]"
+                     (click)="clickOnRecipie(item.key)">
+
+    </app-recipe-view>
 
 
 
@@ -20,12 +23,12 @@
 
     <br>
 
-    <app-recipe-view  [view]="'solo'" styleClass="ui-card-shadow">
+    <app-recipe-view  [view]="'solo'"  [info]="getInformation()" styleClass="ui-card-shadow">
 
 
     </app-recipe-view>
     <br>
-    <button pButton type="button" label="Cancel" icon="pi pi-times" class="ui-button-secondary" (click)="cancel()"></button>
+    <button pButton type="button" label="close" icon="pi pi-times" class="ui-button-secondary" (click)="cancel()"></button>
 
 
   </div>

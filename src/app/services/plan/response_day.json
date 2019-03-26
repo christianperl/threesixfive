@@ -1,0 +1,473 @@
+{
+  "breakfast": {
+    "id": 7424406,
+    "name": "Strawberry Pineapple Protein Breakfast Shake",
+    "description": "Fresh strawberries and pineapple with whey protein.",
+    "ingredients": [
+      {
+        "id": "6289058",
+        "name": "Vanilla Whey Protein",
+        "unit": "1.000",
+        "measurement": "serving",
+        "sub_categories": [
+          "Protein Powder"
+        ]
+      },
+      {
+        "id": "1825269",
+        "name": "Amber Agave Nectar",
+        "unit": "1.000",
+        "measurement": "serving",
+        "sub_categories": [
+          [
+            "Nectar",
+            "Sweetener"
+          ]
+        ]
+      },
+      {
+        "id": "35976",
+        "name": "Strawberries",
+        "unit": "1.000",
+        "measurement": "cup, halves",
+        "sub_categories": [
+          [
+            "Strawberries",
+            "Berries",
+            "Fruit"
+          ]
+        ]
+      },
+      {
+        "id": "1986487",
+        "name": "Pineapple Chunks",
+        "unit": "1.000",
+        "measurement": "serving",
+        "sub_categories": [
+          [
+            "Pineapples",
+            "Fruit"
+          ]
+        ]
+      }
+    ],
+    "directions": [
+      {
+        "direction_description": "Fill blender with strawberries.",
+        "direction_number": "1"
+      },
+      {
+        "direction_description": "Cover strawberries with water, add some ice, nectar and whey protein.",
+        "direction_number": "2"
+      },
+      {
+        "direction_description": "Blend well.",
+        "direction_number": "3"
+      }
+    ],
+    "nutrition": {
+      "calories": "289",
+      "carbohydrate": "50.67",
+      "fat": "1.96",
+      "protein": "21.02",
+      "sugar": "39.08"
+    }
+  },
+  "lunch": {
+    "id": 524,
+    "name": "Vegetable Quesadilla",
+    "description": "This is a quick mid-afternoon snack that will satisfy even the biggest hunger.",
+    "ingredients": [
+      {
+        "id": "33835",
+        "name": "Cheddar or Colby Cheese (Lowfat)",
+        "unit": "4.000",
+        "measurement": "oz",
+        "sub_categories": [
+          [
+            "Cheddar Cheese",
+            "Colby Cheese",
+            "Cheese"
+          ]
+        ]
+      },
+      {
+        "id": "33892",
+        "name": "Black Pepper",
+        "unit": "1.000",
+        "measurement": "dash",
+        "sub_categories": [
+          [
+            "Pepper",
+            "Seasoning"
+          ]
+        ]
+      },
+      {
+        "id": "33908",
+        "name": "Salt",
+        "unit": "1.000",
+        "measurement": "dash",
+        "sub_categories": [
+          [
+            "Salt",
+            "Seasoning"
+          ]
+        ]
+      },
+      {
+        "id": "34345",
+        "name": "Italian Salad Dressing (Fat Free)",
+        "unit": "2.000",
+        "measurement": "tbsp",
+        "sub_categories": [
+          [
+            "Italian Dressing",
+            "Salad Dressing"
+          ]
+        ]
+      },
+      {
+        "id": "36276",
+        "name": "Green Snap Beans",
+        "unit": "4.000",
+        "measurement": "oz",
+        "sub_categories": [
+          [
+            "Green Beans",
+            "Beans"
+          ]
+        ]
+      },
+      {
+        "id": "36295",
+        "name": "Broccoli (Spears, Frozen)",
+        "unit": "8.000",
+        "measurement": "oz",
+        "sub_categories": [
+          [
+            "Broccoli",
+            "Vegetables"
+          ]
+        ]
+      },
+      {
+        "id": "36377",
+        "name": "Cucumber (Peeled)",
+        "unit": "1.000",
+        "measurement": "cup, pared, chopped",
+        "sub_categories": [
+          [
+            "Cucumbers",
+            "Vegetables"
+          ]
+        ]
+      },
+      {
+        "id": "36383",
+        "name": "Garlic",
+        "unit": "1.000",
+        "measurement": "clove",
+        "sub_categories": [
+          [
+            "Garlic",
+            "Vegetables"
+          ]
+        ]
+      },
+      {
+        "id": "36442",
+        "name": "Onions",
+        "unit": "1.000",
+        "measurement": "cup, chopped",
+        "sub_categories": [
+          [
+            "Onions",
+            "Vegetables"
+          ]
+        ]
+      },
+      {
+        "id": "36480",
+        "name": "Green Peppers",
+        "unit": "1.000",
+        "measurement": "cup, chopped",
+        "sub_categories": [
+          [
+            "Peppers",
+            "Vegetables"
+          ]
+        ]
+      },
+      {
+        "id": "36633",
+        "name": "Red Tomatoes",
+        "unit": "1.000",
+        "measurement": "cup, chopped or sliced",
+        "sub_categories": [
+          [
+            "Tomatoes",
+            "Vegetables"
+          ]
+        ]
+      },
+      {
+        "id": "39068",
+        "name": "Flour Tortillas",
+        "unit": "4.000",
+        "measurement": "tortilla medium (approx 6\" dia)",
+        "sub_categories": [
+          [
+            "Tortillas",
+            "Wraps"
+          ]
+        ]
+      },
+      {
+        "id": "40659",
+        "name": "Mozzarella Cheese (Nonfat)",
+        "unit": "4.000",
+        "measurement": "oz",
+        "sub_categories": [
+          [
+            "Mozzarella Cheese",
+            "Cheese"
+          ]
+        ]
+      }
+    ],
+    "directions": [
+      {
+        "direction_description": "In a small skillet combine all the chopped vegetables with the garlic, onions and Italian dressing and cook on medium heat while stirring.",
+        "direction_number": "1"
+      },
+      {
+        "direction_description": "Take one tortilla (whole grain if available) and fill half of the tortilla with the vegetable mixture.",
+        "direction_number": "2"
+      },
+      {
+        "direction_description": "Sprinkle the mixture with the cheeses and fold over the tortilla.",
+        "direction_number": "3"
+      },
+      {
+        "direction_description": "If you have a George Foreman or other griller, place the quesadilla on the grill until the cheese melts. Otherwise place the quesadilla on a cookie sheet and put in the oven at 350 °F (175 °C) until cheese melts. For a quicker solution, put in the microwave on high for 30 seconds.",
+        "direction_number": "4"
+      },
+      {
+        "direction_description": "Once the cheese has melted cut into three triangles and serve with fat free sour cream or a fresh chunky salsa.",
+        "direction_number": "5"
+      }
+    ],
+    "nutrition": {
+      "calories": "250",
+      "carbohydrate": "31.12",
+      "fat": "4.84",
+      "protein": "22.02",
+      "sugar": "7.25"
+    }
+  },
+  "main dish": {
+    "id": 102597,
+    "name": "Lemon Chicken",
+    "description": "A delicious lemony marinade delivers a healthy chicken meal with a kick.",
+    "ingredients": [
+      {
+        "id": "33892",
+        "name": "Black Pepper",
+        "unit": "1.000",
+        "measurement": "tsp",
+        "sub_categories": [
+          [
+            "Pepper",
+            "Seasoning"
+          ]
+        ]
+      },
+      {
+        "id": "33908",
+        "name": "Salt",
+        "unit": "1.000",
+        "measurement": "tsp",
+        "sub_categories": [
+          [
+            "Salt",
+            "Seasoning"
+          ]
+        ]
+      },
+      {
+        "id": "34305",
+        "name": "Canola Vegetable Oil",
+        "unit": "0.500",
+        "measurement": "cup",
+        "sub_categories": [
+          "Vegetable Oil"
+        ]
+      },
+      {
+        "id": "34447",
+        "name": "Chicken Breast Meat (Broilers or Fryers)",
+        "unit": "3.000",
+        "measurement": "breast, bone and skin removed",
+        "sub_categories": [
+          [
+            "Chicken Breast",
+            "Chicken"
+          ]
+        ]
+      },
+      {
+        "id": "34861",
+        "name": "Pepper or Hot Sauce",
+        "unit": "0.250",
+        "measurement": "tsp",
+        "sub_categories": [
+          [
+            "Pepper",
+            "Sauces"
+          ]
+        ]
+      },
+      {
+        "id": "35103",
+        "name": "Worcestershire Sauce",
+        "unit": "1.000",
+        "measurement": "tbsp",
+        "sub_categories": [
+          "Sauces"
+        ]
+      },
+      {
+        "id": "35849",
+        "name": "Lemon Juice",
+        "unit": "0.500",
+        "measurement": "cup",
+        "sub_categories": [
+          [
+            "Seasoning",
+            "Juice"
+          ]
+        ]
+      },
+      {
+        "id": "36442",
+        "name": "Onions",
+        "unit": "1.000",
+        "measurement": "small",
+        "sub_categories": [
+          [
+            "Onions",
+            "Vegetables"
+          ]
+        ]
+      }
+    ],
+    "directions": [
+      {
+        "direction_description": "Split chicken breasts into 6 halves.",
+        "direction_number": "1"
+      },
+      {
+        "direction_description": "Combine all other ingredients in a blender and blend well to make the marinade.",
+        "direction_number": "2"
+      },
+      {
+        "direction_description": "Place chicken in a shallow dish and cover with marinade, reserving 1\/4 cup for later.",
+        "direction_number": "3"
+      },
+      {
+        "direction_description": "Cover and refrigerate about 2 hours, turning chicken occasionally.",
+        "direction_number": "4"
+      },
+      {
+        "direction_description": "Remove chicken from marinade and broil in the oven or on a grill, 11-12 minutes on each side, basting frequently with reserved marinade.",
+        "direction_number": "5"
+      }
+    ],
+    "nutrition": {
+      "calories": "303",
+      "carbohydrate": "3.72",
+      "fat": "19.65",
+      "protein": "27.47",
+      "sugar": "1.28"
+    }
+  },
+  "snack": {
+    "id": 33449,
+    "name": "Traditional Pancakes",
+    "description": "Low fat traditional pancakes alternative using skimmed milk.",
+    "ingredients": [
+      {
+        "id": "33792",
+        "name": "Egg (Whole)",
+        "unit": "1.000",
+        "measurement": "medium",
+        "sub_categories": [
+          "Eggs"
+        ]
+      },
+      {
+        "id": "39830",
+        "name": "White Wheat Flour (All Purpose)",
+        "unit": "4.000",
+        "measurement": "oz",
+        "sub_categories": [
+          "Flour"
+        ]
+      },
+      {
+        "id": "40654",
+        "name": "Milk (Fat Free or Skim, Calcium Fortified)",
+        "unit": "10.000",
+        "measurement": "fl oz",
+        "sub_categories": [
+          [
+            "Skim Milk",
+            "Milk"
+          ]
+        ]
+      }
+    ],
+    "directions": [
+      {
+        "direction_description": "Sift the flour into a bowl and break the egg into the centre.",
+        "direction_number": "1"
+      },
+      {
+        "direction_description": "Gradually add the milk to the bowl and beat the mixture into a smooth batter.",
+        "direction_number": "2"
+      },
+      {
+        "direction_description": "Heat your pan over high until hot.  Reduce heat to medium and spray the pan with 2 sprays of low calorie cooking spray.",
+        "direction_number": "3"
+      },
+      {
+        "direction_description": "Measure 3 tablespoons of the batter mix into a ladle.  Take a note of how full the ladle is, so you don't have to keep measuring for each pancake.",
+        "direction_number": "4"
+      },
+      {
+        "direction_description": "Add the ladle of batter mix to centre of pan, and quickly tip from side to side to evenly coat the bottom of pan.  Cook until the batter becomes firm and bubbles appear, then flip pancake and cook the other side.",
+        "direction_number": "5"
+      },
+      {
+        "direction_description": "Once cooked, remove from pan and keep warm while you cook the rest of the pancakes.",
+        "direction_number": "6"
+      },
+      {
+        "direction_description": "To serve; a quirt of lemon juice and a sprinkle of sugar ( or sugar substitute) can be added as a topping.  Alternatively could be filled with fruit e.g. strawberries, raspberries.  For a special treat, you could add a teaspoon of chocolate spread (e.g. Nutella) spread over half the pancake, with a few slices of banana placed in the middle before rolling up the pancake.",
+        "direction_number": "7"
+      },
+      {
+        "direction_description": "Source: weightlossresources.co.uk",
+        "direction_number": "8"
+      }
+    ],
+    "nutrition": {
+      "calories": "73",
+      "carbohydrate": "12.73",
+      "fat": "0.76",
+      "protein": "3.47",
+      "sugar": "1.96"
+    }
+  }
+}

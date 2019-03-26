@@ -1,11 +1,13 @@
 import {Component, OnInit} from '@angular/core';
-import {first} from 'rxjs/operators';
+import {first, map} from 'rxjs/operators';
 import {Router} from '@angular/router';
 import {SelectItem} from 'primeng/api';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {forEach} from '@angular/router/src/utils/collection';
 import {AuthenticationService} from '../login/_services';
 import {PlanService} from '../services/plan/plan.service';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {environment} from '../../environments/environment';
 
 @Component({
   selector: 'app-food-formular',
@@ -74,7 +76,7 @@ export class FoodFormularComponent implements OnInit {
 
   constructor(
     private router: Router,    private planService: PlanService,
-
+    private http: HttpClient
   ) {
 
     this.meals = [
@@ -178,7 +180,7 @@ export class FoodFormularComponent implements OnInit {
         clickedDays.push(days[i]);
       }
     }
-    const meals = ['Breakfast', 'Lunch', 'Dinner', 'Snack'];
+    const meals = ['breakfast', 'lunch', 'main dish', 'snack'];
     const checkedMeals = [];
     const result = new Map();
 
@@ -226,7 +228,6 @@ export class FoodFormularComponent implements OnInit {
     };
 
     this.buildDays();
-    console.log(JSON.stringify(this.formObject));
     this.planService.sendForm(JSON.stringify(this.formObject));
   }
 

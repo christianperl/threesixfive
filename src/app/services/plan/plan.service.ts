@@ -1,11 +1,9 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {User} from '../../login/_models';
-import {map} from 'rxjs/operators';
+import {first, map} from 'rxjs/operators';
 import {environment} from '../../../environments/environment';
 import data from './response.json';
-import {forEach} from '@angular/router/src/utils/collection';
-
+import data1 from './response_day.json';
 @Injectable({
   providedIn: 'root'
 })
@@ -14,7 +12,7 @@ export class PlanService {
   actualView = 'weekComponent';
   actualDate = new Date();
   json = (<any>data);
-
+  json1 = (<any>data1);
   constructor(private http: HttpClient) {
   }
 
@@ -27,6 +25,7 @@ export class PlanService {
   }
 
   viewWeek() {
+    //this.getWeek(2019, 12);
     this.actualView = 'weekComponent';
   }
 
@@ -43,7 +42,24 @@ export class PlanService {
 
     return json;
   }
-
+  getNameAndDescription() {
+    const json = this.json1;
+    const result = {};
+    const keys = Object.keys(data1);
+    for (let a = 0; a < keys.length; a++) {
+      result[keys[a]] = [Object.values(json)[a]['name'], Object.values(json)[a]['description']];
+    }
+    return result;
+  }
+  getSpecificInformation(type) {
+    const json = this.json1;
+    const result = {};
+    const keys = Object.keys(data1);
+    const index = keys.indexOf(type);
+    result[Object.values(json)[index]['name']] =
+      [Object.values(json)[index]['ingredients'], Object.values(json)[index]['directions'], [Object.values(json)[index]['nutrition']]];
+    return result;
+  }
   sendForm(json) {
     const httpOptions = {
       headers: new HttpHeaders({
@@ -51,9 +67,33 @@ export class PlanService {
         'Authentication': JSON.parse(localStorage.getItem('currentUser')).api_token
       })
     };
-    return this.http.post(`${environment.apiUrl}/form`, json, httpOptions)
-      .pipe(map(response => {
-        console.log(response);
-      }));
+    this.http.post<any>(`${environment.apiUrl}/form`, json, httpOptions)
+      .pipe(first())
+      .subscribe(
+        data => {
+          console.log(data);
+        },
+        error => {
+          console.log('error');
+        });
+  }
+
+  getWeek(year, num) {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authentication': JSON.parse(localStorage.getItem('currentUser')).api_token
+      })
+    };
+    const url = `${environment.apiUrl}/week/` + year + '/' + num;
+    console.log(url);
+    return this.http.get(url, httpOptions)
+      .pipe(first())
+      .subscribe(
+        data => {
+          this.getTypeAndNameFromWeek(data);
+        },
+        error => {
+          console.log('error');
+        });
   }
 }
