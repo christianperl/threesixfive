@@ -25,7 +25,7 @@ export class PlanService {
   }
 
   viewWeek() {
-    this.getWeek(2019, 13);
+    this.getWeek(2019, 12);
     this.actualView = 'weekComponent';
   }
 
@@ -33,7 +33,7 @@ export class PlanService {
     this.actualView = 'dayComponent';
   }
   getTypeAndNameFromWeek() {
-    const json = this.json;
+    const json = this.getWeek(2019, 12);
     const result = [];
     const keys = Object.keys(data);
     for (let a = 0; a < keys.length; a++) {
@@ -90,7 +90,7 @@ export class PlanService {
       .pipe(first())
       .subscribe(
         data => {
-          console.log(data);
+          return data;
         },
         error => {
           console.log('error');
