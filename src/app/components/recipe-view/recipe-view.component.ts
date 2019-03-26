@@ -19,6 +19,6 @@ export class RecipeViewComponent implements OnInit {
   ngOnInit() {
   }
   getMeal() {
-    return this.service.getTypeAndNameFromWeek()[this.day];
+    return this.service.getWeek(2019, 12))[this.day];
   }
 }
