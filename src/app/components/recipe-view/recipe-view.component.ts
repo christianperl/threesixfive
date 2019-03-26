@@ -12,6 +12,7 @@ export class RecipeViewComponent implements OnInit {
   @Input() type: string;
   @Input() day: string;
   @Input() descr: string;
+  @Input() info: string;
 
   constructor(private service: PlanService) { }
 
@@ -20,5 +21,7 @@ export class RecipeViewComponent implements OnInit {
   getMeal() {
     return this.service.getTypeAndNameFromWeek()[this.day];
   }
+  getMoreInfos() {
 
+  }
 }

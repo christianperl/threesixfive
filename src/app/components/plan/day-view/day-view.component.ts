@@ -13,7 +13,7 @@ export class DayViewComponent implements OnInit {
   @Input() Date;
   date: string;
   recipieView: boolean;
-
+  value;
   constructor(private service: PlanService) {
   }
 
@@ -22,10 +22,16 @@ export class DayViewComponent implements OnInit {
     this.date = this.date.substring(0, 16);
   }
 
-  clickOnRecipie() {
+  clickOnRecipie(type) {
     this.recipieView = true;
+    this.value = type;
   }
+  getInformation() {
 
+    const key = Object.keys(this.service.getSpecificInformation(this.value))[0];
+    console.log({'key': key, 'values': this.service.getSpecificInformation(this.value)[key]});
+    return {'key': key, 'values': this.service.getSpecificInformation(this.value)[key]};
+  }
   cancel() {
     this.recipieView = false;
   }

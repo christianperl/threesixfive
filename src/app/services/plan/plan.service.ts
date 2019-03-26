@@ -1,6 +1,5 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {User} from '../../login/_models';
 import {map} from 'rxjs/operators';
 import {environment} from '../../../environments/environment';
 import data from './response.json';
@@ -26,6 +25,7 @@ export class PlanService {
   }
 
   viewWeek() {
+    console.log(this.getWeek(2019, 13));
     this.actualView = 'weekComponent';
   }
 
@@ -51,7 +51,14 @@ export class PlanService {
     }
     return result;
   }
-
+  getSpecificInformation(type) {
+    const json = this.json1;
+    const result = {};
+    const keys = Object.keys(data1);
+    const index = keys.indexOf(type);
+    result[Object.values(json)[index]['name']] = [Object.values(json)[index]['ingredients'], Object.values(json)[index]['directions']];
+    return result;
+  }
   sendForm(json) {
     const httpOptions = {
       headers: new HttpHeaders({
@@ -63,5 +70,15 @@ export class PlanService {
       .pipe(map(response => {
         console.log(response);
       }));
+  }
+
+  getWeek(year, num) {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authentication': JSON.parse(localStorage.getItem('currentUser')).api_token
+      })
+    };
+    return this.http.get(`${environment.apiUrl}/week/` + year + '/' + num, httpOptions);
   }
 }

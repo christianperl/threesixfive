@@ -9,12 +9,12 @@
 
 
 <p-card *ngIf="view == 'solo'">
-  <span>{{type}}</span>
-  <span>BetterView</span>
+  <span>{{info.key}}</span><hr>
+  <span *ngFor="let item of info.values[0]">{{(item.name + ' : ' +  item.unit + ' ' + item.measurement)}} <br></span><hr>
+  <ol>
+    <li *ngFor="let item of info.values[1]">{{item.direction_description}}</li>
+  </ol>
   <hr>
-  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-
-
 </p-card>
 
 <p-card *ngIf="view == 'day'">
