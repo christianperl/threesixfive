@@ -25,15 +25,15 @@ export class PlanService {
   }
 
   viewWeek() {
-    this.getWeek(2019, 12);
+    //this.getWeek(2019, 12);
     this.actualView = 'weekComponent';
   }
 
   viewDay() {
     this.actualView = 'dayComponent';
   }
-  getTypeAndNameFromWeek(json) {
-    // const json = this.getWeek(2019, 12);
+  getTypeAndNameFromWeek() {
+    const json = this.json;
     const result = [];
     const keys = Object.keys(data);
     for (let a = 0; a < keys.length; a++) {
