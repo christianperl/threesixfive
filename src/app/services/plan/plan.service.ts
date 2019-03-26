@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {map} from 'rxjs/operators';
+import {first, map} from 'rxjs/operators';
 import {environment} from '../../../environments/environment';
 import data from './response.json';
 import data1 from './response_day.json';
@@ -25,7 +25,7 @@ export class PlanService {
   }
 
   viewWeek() {
-    console.log(this.getWeek(2019, 13));
+    this.getWeek(2019, 13);
     this.actualView = 'weekComponent';
   }
 
@@ -56,7 +56,8 @@ export class PlanService {
     const result = {};
     const keys = Object.keys(data1);
     const index = keys.indexOf(type);
-    result[Object.values(json)[index]['name']] = [Object.values(json)[index]['ingredients'], Object.values(json)[index]['directions']];
+    result[Object.values(json)[index]['name']] =
+      [Object.values(json)[index]['ingredients'], Object.values(json)[index]['directions'], [Object.values(json)[index]['nutrition']]];
     return result;
   }
   sendForm(json) {
@@ -66,19 +67,33 @@ export class PlanService {
         'Authentication': JSON.parse(localStorage.getItem('currentUser')).api_token
       })
     };
-    return this.http.post<any>(`${environment.apiUrl}/form`, json, httpOptions)
-      .pipe(map(response => {
-        console.log(response);
-      }));
+    this.http.post<any>(`${environment.apiUrl}/form`, JSON.stringify(this.formObject), httpOptions)
+      .pipe(first())
+      .subscribe(
+        data => {
+          console.log(data);
+        },
+        error => {
+          console.log('error');
+        });
   }
 
   getWeek(year, num) {
     const httpOptions = {
       headers: new HttpHeaders({
-        'Content-Type': 'application/json',
         'Authentication': JSON.parse(localStorage.getItem('currentUser')).api_token
       })
     };
-    return this.http.get(`${environment.apiUrl}/week/` + year + '/' + num, httpOptions);
+    const url = `${environment.apiUrl}/week/` + year + '/' + num;
+    console.log(url);
+    return this.http.get(url, httpOptions)
+      .pipe(first())
+      .subscribe(
+        data => {
+          console.log(data);
+        },
+        error => {
+          console.log('error');
+        });
   }
 }

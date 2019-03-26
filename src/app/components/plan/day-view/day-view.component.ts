@@ -25,11 +25,11 @@ export class DayViewComponent implements OnInit {
   clickOnRecipie(type) {
     this.recipieView = true;
     this.value = type;
+    console.log(this.service.getSpecificInformation('breakfast'));
   }
   getInformation() {
 
     const key = Object.keys(this.service.getSpecificInformation(this.value))[0];
-    console.log({'key': key, 'values': this.service.getSpecificInformation(this.value)[key]});
     return {'key': key, 'values': this.service.getSpecificInformation(this.value)[key]};
   }
   cancel() {

@@ -10,11 +10,19 @@
 
 <p-card *ngIf="view == 'solo'">
   <span>{{info.key}}</span><hr>
+
+  <span *ngFor="let item of info.values[2]">Calories : {{(item.calories)}}<br>
+    Carbohydrate : {{item.carbohydrate}}<br>
+    Sugar : {{item.sugar}}<br>
+    Fat : {{item.fat}}<br>
+    Protein : {{item.protein}}
+  </span><hr>
+
   <span *ngFor="let item of info.values[0]">{{(item.name + ' : ' +  item.unit + ' ' + item.measurement)}} <br></span><hr>
   <ol>
     <li *ngFor="let item of info.values[1]">{{item.direction_description}}</li>
-  </ol>
-  <hr>
+  </ol><hr>
+
 </p-card>
 
 <p-card *ngIf="view == 'day'">

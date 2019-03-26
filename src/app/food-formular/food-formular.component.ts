@@ -228,25 +228,7 @@ export class FoodFormularComponent implements OnInit {
     };
 
     this.buildDays();
-    console.log(JSON.stringify(this.formObject));
-    // this.planService.sendForm(JSON.stringify(this.formObject));
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Authentication': JSON.parse(localStorage.getItem('currentUser')).api_token
-      })
-    };
-    console.log(`${environment.apiUrl}/user/login`);
-    this.http.post<any>(`${environment.apiUrl}/form`, JSON.stringify(this.formObject), httpOptions)
-      .pipe(first())
-      .subscribe(
-        data => {
-          console.log(data);
-        },
-        error => {
-         console.log('error');
-        });
-    console.log('Http Post Request done');
+    this.planService.sendForm(JSON.stringify(this.formObject));
   }
 
 

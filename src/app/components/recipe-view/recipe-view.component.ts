@@ -21,7 +21,4 @@ export class RecipeViewComponent implements OnInit {
   getMeal() {
     return this.service.getTypeAndNameFromWeek()[this.day];
   }
-  getMoreInfos() {
-
-  }
 }
