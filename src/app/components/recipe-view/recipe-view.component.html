@@ -1,11 +1,16 @@
-<p-card *ngIf="view == 'month'">
-  <span>{{day}}</span><hr>
-  <p-card *ngFor="let item of getMeal()| keyvalue">
-    <span>{{(item.key )}}</span><hr>
-    <span>{{item.value }}</span>
-  </p-card>
-
-</p-card>
+<div *ngIf="view == 'month'" style="cursor: pointer; text-align: end">
+  <div class="title" style="padding-top: 5px">
+    <h3>{{day}}</h3>
+  </div>
+  <div class="ui-g" *ngFor="let item of getMeal()| keyvalue">
+    <div class="content">
+      <span>{{(item.key )}}</span>
+      <i class="pi pi-refresh" title="Reload" style="font-size: 1em; color: #4a5a62; margin-left: 5px"></i>
+      <p>{{item.value }}</p>
+      <hr>
+    </div>
+  </div>
+</div>
 
 
 <p-card *ngIf="view == 'solo'">

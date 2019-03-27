@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {GroceryListService} from '../../services/grocery-list/grocery-list.service';
 
 @Component({
   selector: 'app-list',
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
-
-  constructor() { }
+  list;
+  constructor(private service: GroceryListService) { }
 
   ngOnInit() {
+    this.service.getListFromPlan();
+    this.list = this.service.list;
   }
-
 }

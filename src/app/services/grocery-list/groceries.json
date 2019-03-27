@@ -1,0 +1,541 @@
+[
+  {
+    "name": "Vanilla Whey Protein",
+    "serving": 28,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Amber Agave Nectar",
+    "serving": 21,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Strawberries",
+    "serving": 152,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Pineapple Chunks",
+    "serving": 140,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Cheddar or Colby Cheese (Lowfat)",
+    "serving": 113.4,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Black Pepper",
+    "serving": 0.1,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Salt",
+    "serving": 0.4,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Italian Salad Dressing (Fat Free)",
+    "serving": 28,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Green Snap Beans",
+    "serving": 113.4,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Broccoli (Spears, Frozen)",
+    "serving": 226.8,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Cucumber (Peeled)",
+    "serving": 133,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Garlic",
+    "serving": 3,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Onions",
+    "serving": 160,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Green Peppers",
+    "serving": 149,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Red Tomatoes",
+    "serving": 180,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Flour Tortillas",
+    "serving": 120,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Mozzarella Cheese (Nonfat)",
+    "serving": 113.4,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Canola Vegetable Oil",
+    "serving": 109,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Chicken Breast Meat (Broilers or Fryers)",
+    "serving": 354,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Pepper or Hot Sauce",
+    "serving": 1.175,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Worcestershire Sauce",
+    "serving": 17,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Lemon Juice",
+    "serving": 122,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Egg (Whole)",
+    "serving": 44,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "White Wheat Flour (All Purpose)",
+    "serving": 113.4,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Milk (Fat Free or Skim, Calcium Fortified)",
+    "serving": 309,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Red Onions",
+    "serving": 40,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Bell Peppers",
+    "serving": 74.5,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Egg White",
+    "serving": 243,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Mushrooms",
+    "serving": 35,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Chili Powder",
+    "serving": 7.5,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Red Tomatoes (with Green Chilies, Canned)",
+    "serving": 241,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Pinto Beans (Mature Seeds, Canned)",
+    "serving": 480,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Ground Beef (95% Lean \/ 5% Fat)",
+    "serving": 907.2,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Cinnamon",
+    "serving": 3.4499999999999997,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Pumpkin Pie Spice",
+    "serving": 5.6,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Oats Cereal (Dry, Not Fortified)",
+    "serving": 81,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Blueberries",
+    "serving": 72.5,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Pumpkin (Without Salt, Canned)",
+    "serving": 113.4,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Sweeteners (Splenda Packets, Sucralose)",
+    "serving": 1,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Lean Turkey Breakfast Sausage Links",
+    "serving": 336,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Egg",
+    "serving": 600,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Spinach (Chopped or Leaf, Frozen)",
+    "serving": 142,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Sweet Potato",
+    "serving": 130,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Olive Oil",
+    "serving": 9,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Tilapia (Fish)",
+    "serving": 453.6,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Light Vegetable Oil Spread",
+    "serving": 112,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Old Fashioned Oats",
+    "serving": 60,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Whole Wheat Flour",
+    "serving": 120,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Baking Soda",
+    "serving": 4.6,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Organic 100% Whole Ground Golden Flaxseed Meal",
+    "serving": 65,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Honey",
+    "serving": 254.25,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Sea Salt",
+    "serving": 2.999,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Clover Honey",
+    "serving": 39.4,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "2% Fat Milk",
+    "serving": 854,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Oatmeal",
+    "serving": 936,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Peach",
+    "serving": 157,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Cabbage",
+    "serving": 33,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Carrots",
+    "serving": 32,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Zucchini",
+    "serving": 124,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Sweet Red Peppers",
+    "serving": 149,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Brown Rice (Medium-Grain)",
+    "serving": 47.5,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Organic High Fiber Coconut Flour",
+    "serving": 56,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Coconut Oil",
+    "serving": 54.4,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Almond Butter",
+    "serving": 128,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Vanilla Extract",
+    "serving": 4.2,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Bananas",
+    "serving": 562.5,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Baking Powder (Sodium Aluminum Sulfate, Double Acting)",
+    "serving": 4.6,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Cheddar Cheese",
+    "serving": 85.05000000000001,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Chicken (No Broth, Canned)",
+    "serving": 125,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Corn Tortillas",
+    "serving": 24,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Ground Beef",
+    "serving": 453.6,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Garlic Powder",
+    "serving": 8.4,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Scallions or Spring Onions",
+    "serving": 45,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Walnuts",
+    "serving": 60,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Sugar",
+    "serving": 200,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Butter",
+    "serving": 56.8,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  },
+  {
+    "name": "Cranberries",
+    "serving": 137.5,
+    "measurement": "g",
+    "checked": false,
+    "generated": true
+  }
+]

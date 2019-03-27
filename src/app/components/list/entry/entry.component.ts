@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {GroceryListService} from '../../../services/grocery-list/grocery-list.service';
 import {Grocery} from '../../../modals/grocery';
 
@@ -9,7 +9,10 @@ import {Grocery} from '../../../modals/grocery';
   styleUrls: ['./entry.component.scss']
 })
 export class EntryComponent implements OnInit {
-  groceryList = this.service.list;
+  @Input() name: string;
+  @Input() serving: string;
+  @Input() measurement: string;
+
   constructor(private service: GroceryListService) {
   }
   ngOnInit() {
