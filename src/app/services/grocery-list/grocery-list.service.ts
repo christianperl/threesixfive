@@ -12,7 +12,7 @@ export class GroceryListService {
   }
 
   list;
-  checkedGroceries = new Array<Grocery>();
+  checkedList = new Array();
 
   addToList(grocery) {
     this.list.push(grocery);
@@ -20,15 +20,7 @@ export class GroceryListService {
 
   removeFromList(grocery) {
     this.list.splice(this.list.indexOf(grocery), 1);
-  }
-
-  addToCheckedGroceries(grocery) {
-    this.checkedGroceries.push(grocery);
-  }
-
-  removeFromCheckedGroceries(grocery) {
-    this.checkedGroceries.splice(this.checkedGroceries.indexOf(grocery), 1);
-  }
+}
   getListFromPlan() {
     const json = this.json;
     const result = [];
@@ -36,7 +28,14 @@ export class GroceryListService {
     for (let a = 0; a < json.length; a++) {
       result.push(json[a]);
     }
-
     this.list = result;
+  }
+  moveToCheckedList(grocery) {
+    this.checkedList.push(grocery);
+    this.removeFromList(grocery);
+    console.log(this.checkedList);
+  }
+  removeFromCheckedList(grocery) {
+    this.checkedList.splice(this.list.indexOf(grocery), 1);
   }
 }

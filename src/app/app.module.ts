@@ -7,7 +7,6 @@ import {SettingsComponent} from './components/settings/settings.component';
 import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {EntryComponent} from './components/list/entry/entry.component';
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
@@ -59,7 +58,6 @@ import {TabViewModule} from 'primeng/tabview';
     PlanComponent,
     ListComponent,
     SettingsComponent,
-    EntryComponent,
     EntryCreatorComponent,
     CheckedEntryComponent,
     DayViewComponent,

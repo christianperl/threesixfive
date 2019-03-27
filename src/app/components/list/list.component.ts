@@ -8,10 +8,22 @@ import {GroceryListService} from '../../services/grocery-list/grocery-list.servi
 })
 export class ListComponent implements OnInit {
   list;
+  checkedList;
   constructor(private service: GroceryListService) { }
 
   ngOnInit() {
     this.service.getListFromPlan();
     this.list = this.service.list;
+  }
+  deleteGrocery(grocery) {
+    this.service.removeFromList(grocery);
+  }
+  checkGrocery(grocery) {
+    this.service.moveToCheckedList(grocery);
+    this.checkedList = this.service.checkedList;
+    this.list = this.service.list;
+  }
+  deleteFromCheckedGrocery(grocery) {
+    this.service.removeFromCheckedList(grocery);
   }
 }
