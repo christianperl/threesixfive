@@ -12,11 +12,6 @@ export class ListComponent implements OnInit {
   entryName;
   serving;
   form = false;
-  measurements = [
-    {label: 'gram', value: 'g'},
-    {label: 'litre', value: 'l'},
-    {label: 'pounds', value: 'p'}
-  ];
   selectedMeasurement;
   constructor(private service: GroceryListService) {
   }
@@ -45,5 +40,8 @@ export class ListComponent implements OnInit {
     const entry =  {'name': this.entryName, 'serving': this.serving, 'measurement' :
       this.selectedMeasurement, 'checked' : false, 'generated' : false};
     this.service.addToList(entry);
+    this.entryName = null;
+    this.serving = null;
+    this.selectedMeasurement = null;
   }
 }

@@ -5,6 +5,9 @@ import {
 import {PlanService} from '../../services/plan/plan.service';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import moment from 'moment';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {environment} from '../../../environments/environment';
+import {first} from 'rxjs/operators';
 
 
 @Component({
@@ -41,7 +44,7 @@ export class PlanComponent implements OnInit {
       'Sunday': 6
     };
   iterator = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-  constructor(private service: PlanService) {
+  constructor(private service: PlanService, private http: HttpClient) {
   }
 
   ngOnInit() {
@@ -65,6 +68,7 @@ export class PlanComponent implements OnInit {
       woche.push(moment().add(i - a, 'days'));
     }
     this.week = woche;
+    console.log('Test');
   }
 
   calenderIsClicked() {
@@ -78,6 +82,7 @@ export class PlanComponent implements OnInit {
     this.key = this.service.actualView;
   }
   viewWeek() {
+    this.fetchWeek(2019, 13);
     this.service.viewWeek();
     this.key = this.service.actualView;
     this.getWeek();
@@ -98,5 +103,24 @@ export class PlanComponent implements OnInit {
     this.clickedDate = this.service.clickedDate;
     this.service.viewDay();
     this.key = this.service.actualView;
+  }
+
+  fetchWeek(year, num) {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authentication': JSON.parse(localStorage.getItem('currentUser')).api_token
+      })
+    };
+    const url = `${environment.apiUrl}/week/` + year + '/' + num;
+    console.log(url);
+    return this.http.get(url, httpOptions)
+      .pipe(first())
+      .subscribe(
+        data => {
+          console.log(data);
+        },
+        error => {
+          console.log(error);
+        });
   }
 }

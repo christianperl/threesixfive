@@ -4,7 +4,6 @@
 <div>
   <div class="row">
     <p-button (click)="openForm()">New Entry</p-button>
-
     <div class="entry-form" *ngIf="form">
       <input type="text" pInputText [(ngModel)]="entryName" placeholder="name"/>
       <input type="number" pInputText [(ngModel)]="serving" placeholder="serving"/>
