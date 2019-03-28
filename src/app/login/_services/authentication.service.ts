@@ -26,6 +26,7 @@ export class AuthenticationService {
             if (user && 'auth-token' in user) {
               localStorage.setItem('currentUser', JSON.stringify(user));
               this.currentUserSubject.next(user);
+              return user;
             }
             console.log(user);
           }));

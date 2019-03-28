@@ -55,14 +55,14 @@ export class LoginComponent implements OnInit {
     this.authenticationService.login(this.f.email.value, this.f.password.value)
       .pipe(first())
       .subscribe(
-        data => {
+        user => {
           /*if () {
             this.router.navigate([this.returnUrl]);
           } else {
             this.router.navigate(['/plan']);
           }*/
-          console.log(data);
-          console.log(typeof data);
+          console.log(user);
+          console.log(typeof user);
         },
         error => {
           this.alertService.error(error);
