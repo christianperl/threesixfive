@@ -33,7 +33,6 @@ export class GroceryListService {
   moveToCheckedList(grocery) {
     this.checkedList.push(grocery);
     this.removeFromList(grocery);
-    console.log(this.checkedList);
   }
   removeFromCheckedList(grocery) {
     this.checkedList.splice(this.list.indexOf(grocery), 1);

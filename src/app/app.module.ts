@@ -35,6 +35,7 @@ import {ToggleButtonModule} from 'primeng/togglebutton';
 import {SpinnerModule} from 'primeng/spinner';
 import {RadioButtonModule} from 'primeng/radiobutton';
 import {PanelModule} from 'primeng/panel';
+import {DropdownModule} from 'primeng/dropdown';
 
 // used to create fake backend
 import {fakeBackendProvider} from './login/_helpers';
@@ -95,6 +96,7 @@ import {TabViewModule} from 'primeng/tabview';
     ToggleButtonModule,
     TabViewModule,
     PanelModule,
+    DropdownModule
   ],
   providers: [GroceryListService,
     // { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

@@ -9,8 +9,17 @@ import {GroceryListService} from '../../services/grocery-list/grocery-list.servi
 export class ListComponent implements OnInit {
   list;
   checkedList;
-  constructor(private service: GroceryListService) { }
-
+  entryName;
+  serving;
+  form = false;
+  measurements = [
+    {label: 'gram', value: 'g'},
+    {label: 'litre', value: 'l'},
+    {label: 'pounds', value: 'p'}
+  ];
+  selectedMeasurement;
+  constructor(private service: GroceryListService) {
+  }
   ngOnInit() {
     this.service.getListFromPlan();
     this.list = this.service.list;
@@ -25,5 +34,16 @@ export class ListComponent implements OnInit {
   }
   deleteFromCheckedGrocery(grocery) {
     this.service.removeFromCheckedList(grocery);
+  }
+  openForm() {
+    this.form = true;
+  }
+  closeForm() {
+    this.form  = false;
+  }
+  submitForm() {
+    const entry =  {'name': this.entryName, 'serving': this.serving, 'measurement' :
+      this.selectedMeasurement, 'checked' : false, 'generated' : false};
+    this.service.addToList(entry);
   }
 }
