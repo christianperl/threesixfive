@@ -56,7 +56,7 @@ export class LoginComponent implements OnInit {
       .pipe(first())
       .subscribe(
         data => {
-          if (typeof data['init-reg'] !== 'undefined') {
+          if ('init-reg' in data) {
             this.router.navigate([this.returnUrl]);
           } else {
             this.router.navigate(['/plan']);
