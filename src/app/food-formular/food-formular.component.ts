@@ -228,7 +228,7 @@ export class FoodFormularComponent implements OnInit {
     };
 
     this.buildDays();
-   // this.planService.sendForm(JSON.stringify(this.formObject));
+    this.planService.sendForm(JSON.stringify(this.formObject));
   }
 
 
