@@ -14,12 +14,14 @@ export class DayViewComponent implements OnInit {
   date: string;
   recipieView: boolean;
   value;
+  dailyMeal;
   constructor(private service: PlanService) {
   }
 
   ngOnInit() {
     this.date = this.Date.toString();
     this.date = this.date.substring(0, 16);
+    this.dailyMeal = this.getDailyMeal();
   }
 
   clickOnRecipie(type) {

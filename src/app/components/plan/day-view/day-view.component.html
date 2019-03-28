@@ -7,7 +7,7 @@
   <br><br>
   <div class="recipies">
 
-    <app-recipe-view *ngFor="let item of getDailyMeal() | keyvalue"
+    <app-recipe-view *ngFor="let item of dailyMeal | keyvalue"
                      style="width: 300px" [view]="'day'" [type] = item.key
                      [name]="item.value[0]" [descr]="item.value[1]"
                      (click)="clickOnRecipie(item.key)">
