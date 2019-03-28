@@ -56,11 +56,13 @@ export class LoginComponent implements OnInit {
       .pipe(first())
       .subscribe(
         data => {
-          if ('init-reg' in data) {
+          /*if () {
             this.router.navigate([this.returnUrl]);
           } else {
             this.router.navigate(['/plan']);
-          }
+          }*/
+          console.log(data);
+          console.log(typeof data);
         },
         error => {
           this.alertService.error(error);
