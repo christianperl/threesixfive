@@ -229,7 +229,11 @@ export class FoodFormularComponent implements OnInit {
     };
 
     this.buildDays();
-    this.lumen.postForm(JSON.stringify(this.formObject));
+    this.lumen.postForm(JSON.stringify(this.formObject)).subscribe(
+      response => {
+        console.log(response);
+      }
+    );
   }
 
 

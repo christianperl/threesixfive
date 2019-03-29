@@ -10,8 +10,6 @@ export class LumenService {
 
   constructor(private http: HttpClient) { }
 
-  week;
-
   postForm(json) {
     const httpOptions = {
       headers: new HttpHeaders({
@@ -19,14 +17,7 @@ export class LumenService {
         'Authentication': JSON.parse(localStorage.getItem('currentUser'))['auth-token']
       })
     };
-    this.http.post<any>(`${environment.apiUrl}/form`, json, httpOptions)
-      .subscribe(
-        data => {
-          console.log(data);
-        },
-        error => {
-          console.log(error);
-        });
+    return this.http.post<any>(`${environment.apiUrl}/form`, json, httpOptions);
   }
 
   fetchWeek(year, num) {
@@ -36,31 +27,16 @@ export class LumenService {
       })
     };
     const url = `${environment.apiUrl}/week/` + year + '/' + num;
-    return this.http.get(url, httpOptions)
-      .subscribe(
-        data => {
-          this.week = data;
-          return this.week;
-        },
-        error => {
-          console.log(error);
-        });
-  }
+    return this.http.get(url, httpOptions);
+        }
 
-  fetchDay(date) {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Authentication': JSON.parse(localStorage.getItem('currentUser'))['auth-token']
-      })
-    };
-    const url = `${environment.apiUrl}/day/` + date;
-    return this.http.get(url, httpOptions)
-      .subscribe(
-        data => {
-          console.log(data);
-        },
-        error => {
-          console.log(error);
-        });
+    fetchDay(date) {
+      const httpOptions = {
+        headers: new HttpHeaders({
+          'Authentication': JSON.parse(localStorage.getItem('currentUser'))['auth-token']
+        })
+      };
+      const url = `${environment.apiUrl}/day/` + date;
+      return this.http.get(url, httpOptions);
   }
 }
