@@ -5,7 +5,6 @@ import {environment} from '../../../environments/environment';
 import data from './response.json';
 import data1 from './response_day.json';
 import {LumenService} from '../lumen/lumen.service';
-import {copyObj} from '@angular/animations/browser/src/util';
 @Injectable({
   providedIn: 'root'
 })
@@ -28,6 +27,16 @@ export class PlanService {
   }
 
   viewWeek() {
+    this.lumen.fetchWeek(2019, 13).subscribe(
+      week => {
+        console.log(week);
+      }
+    );
+    this.lumen.fetchDay('2019-03-31').subscribe(
+      day => {
+        console.log(day);
+      }
+    );
     this.actualView = 'weekComponent';
   }
 
@@ -41,14 +50,7 @@ export class PlanService {
   }
 
   getNameAndDescription() {
-    let json = null;
-
-    this.lumen.fetchDay('2019-03-31').subscribe(
-      response => {
-        console.log(response);
-        json =  copyObj(response);
-      }
-    );
+    let json = this.json1;
     console.log(json);
     const result = {};
     const keys = Object.keys(data1);
