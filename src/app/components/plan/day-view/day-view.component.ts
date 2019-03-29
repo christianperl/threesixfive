@@ -21,8 +21,8 @@ export class DayViewComponent implements OnInit {
 
   ngOnInit() {
     this.date = this.Date.toString();
-    this.date = this.date.substring(0, 16);
-    this.lumen.fetchDay('2019-03-31').subscribe(
+    // this.date = this.date.substring(0, 16);
+    this.lumen.fetchDay(this.date).subscribe(
       day => {
         const result = {};
         const keys = Object.keys(day);
