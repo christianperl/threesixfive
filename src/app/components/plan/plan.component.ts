@@ -1,16 +1,8 @@
-import {
-  ApplicationRef, ChangeDetectionStrategy, ChangeDetectorRef,
-  Component,
-  OnInit, ɵisDefaultChangeDetectionStrategy,
-} from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnInit,} from '@angular/core';
 import {PlanService} from '../../services/plan/plan.service';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import moment from 'moment';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {environment} from '../../../environments/environment';
-import {first, timeout} from 'rxjs/operators';
 import {LumenService} from '../../services/lumen/lumen.service';
-import {ChangeDetection} from '@angular/cli/lib/config/schema';
 
 
 @Component({
@@ -18,6 +10,7 @@ import {ChangeDetection} from '@angular/cli/lib/config/schema';
   // changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './plan.component.html',
   styleUrls: ['./plan.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [
     trigger('enterTrigger', [
       state('fadeIn', style({
@@ -79,7 +72,7 @@ export class PlanComponent implements OnInit {
         this.weekMeals = week;
       }
     );
-    timeout(1);
+    this.viewWeek();
   }
 
   calenderIsClicked() {
