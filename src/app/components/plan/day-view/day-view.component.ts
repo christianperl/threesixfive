@@ -31,13 +31,6 @@ export class DayViewComponent implements OnInit {
         }
 
         this.dailyMeal = result;
-
-        ['breakfast', 'lunch', 'main dish', 'snack'].forEach(type => {
-          const keys2 = Object.keys(day);
-          const index = keys2.indexOf(type);
-          result[Object.values(day)[index]['name']] =
-            [Object.values(day)[index]['ingredients'], Object.values(day)[index]['directions'], [Object.values(day)[index]['nutrition']]];
-        });
       }
     );
   }
