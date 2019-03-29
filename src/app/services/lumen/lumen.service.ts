@@ -10,6 +10,8 @@ export class LumenService {
 
   constructor(private http: HttpClient) { }
 
+  week;
+
   postForm(json) {
     const httpOptions = {
       headers: new HttpHeaders({
@@ -37,7 +39,8 @@ export class LumenService {
     return this.http.get(url, httpOptions)
       .subscribe(
         data => {
-          return data;
+          this.week = data;
+          return this.week;
         },
         error => {
           console.log(error);
