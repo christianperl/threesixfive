@@ -21,9 +21,6 @@
 
 
   <div *ngSwitchCase="'weekComponent'">
-    <a (click)="viewMonth() " *ngIf="key != 'monthComponent'"
-       style="position: absolute;margin: 55px 0px;display: flex;flex-direction: column;align-items: center;"><i
-      class="pi pi-calendar" style="font-size: 3em; color: #4a5a62"></i><span style="color: #4a5a62">MONTH</span></a>
     <div class="title">
       <h1>Week</h1>
       <span>Click on each <a>Day</a> for more details!</span>
@@ -33,7 +30,7 @@
 
 
       <div class="ui-g" style="flex-wrap: nowrap">
-        <a (click)="" style=" margin: 30px 20px; display: flex; flex-direction: column; align-items: center;"><i
+        <a (click)="viewWeek()" style=" margin: 30px 20px; display: flex; flex-direction: column; align-items: center;"><i
           class="pi pi-arrow-left" style="font-size: 2em; color: #4a5a62"></i><span
           style="color: #4a5a62">LEFT</span></a>
 
@@ -65,7 +62,7 @@
                          style="margin: 20px 10px;">
         </app-recipe-view>
 
-        <a (click)="" style=" margin: 30px 20px; display: flex; flex-direction: column; align-items: center;"><i
+        <a (click)="viewWeek()" style=" margin: 30px 20px; display: flex; flex-direction: column; align-items: center;"><i
           class="pi pi-arrow-right" style="font-size: 2em; color: #4a5a62"></i><span style="color: #4a5a62">RIGHT</span></a>
       </div>
 
