@@ -94,9 +94,9 @@ export class PlanComponent implements OnInit {
   }
 
   getWeek() {
-    const b = moment().format('dddd');
+    const b = moment('YYYY-MM-DD').format();
     const a = this.days[b];
-    const monday = moment().subtract(a, 'days').format('YYYY-MM-DD');
+    const monday = moment('YYYY-MM-DD').subtract(a, 'days').format();
     const woche = [];
     for (let i = 0; i < 7; i++) {
       woche.push(moment().add(i - a, 'days'));
