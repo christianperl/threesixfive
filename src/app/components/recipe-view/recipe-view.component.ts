@@ -23,6 +23,6 @@ export class RecipeViewComponent implements OnInit {
   }
   getMeal() {
     // return this.meal[this.day];
-    this.mealNameType = this.meals[this.day];
+    this.mealNameType = this.meals;
   }
 }
