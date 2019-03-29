@@ -67,7 +67,7 @@ export class PlanComponent implements OnInit {
     const monday = moment().subtract(a, 'days').format('YYYY-MM-DD');
     const woche = [];
     for (let i = 0; i < 7; i++) {
-      woche.push(moment().add(i - a, 'days'));
+      woche.push(moment().add(i - a, 'days').format('YYYY-MM-DD'));
     }
     this.week = woche;
     this.lumen.fetchWeek(2019, 13).subscribe(

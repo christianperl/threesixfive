@@ -20,6 +20,7 @@ export class DayViewComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log(this.Date.toString());
     this.lumen.fetchDay(this.Date.toString()).subscribe(
       day => {
         const result = {};
