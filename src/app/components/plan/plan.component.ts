@@ -8,6 +8,7 @@ import moment from 'moment';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {environment} from '../../../environments/environment';
 import {first} from 'rxjs/operators';
+import {LumenService} from '../../services/lumen/lumen.service';
 
 
 @Component({
@@ -44,7 +45,7 @@ export class PlanComponent implements OnInit {
       'Sunday': 6
     };
   iterator = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-  constructor(private service: PlanService, private http: HttpClient) {
+  constructor(private service: PlanService, private lumen: LumenService) {
   }
 
   ngOnInit() {
@@ -82,7 +83,8 @@ export class PlanComponent implements OnInit {
     this.key = this.service.actualView;
   }
   viewWeek() {
-    this.fetchWeek(2019, 13);
+    this.lumen.fetchWeek(2019, 13);
+    this.lumen.fetchDay('2019-03-31');
     this.service.viewWeek();
     this.key = this.service.actualView;
     this.getWeek();
