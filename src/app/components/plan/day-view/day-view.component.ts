@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {PlanService} from '../../../services/plan/plan.service';
+import {LumenService} from '../../../services/lumen/lumen.service';
 
 @Component({
   selector: 'app-day-view',
@@ -15,13 +16,13 @@ export class DayViewComponent implements OnInit {
   recipieView: boolean;
   value;
   dailyMeal;
-  constructor(private service: PlanService) {
+  constructor(private service: PlanService, private lumen: LumenService) {
   }
 
   ngOnInit() {
     this.date = this.Date.toString();
     this.date = this.date.substring(0, 16);
-    this.dailyMeal = this.getDailyMeal();
+    this.dailyMeal = this.lumen.fetchDay('2019-03-31');
   }
 
   clickOnRecipie(type) {

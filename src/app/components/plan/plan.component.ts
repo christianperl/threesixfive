@@ -69,7 +69,6 @@ export class PlanComponent implements OnInit {
       woche.push(moment().add(i - a, 'days'));
     }
     this.week = woche;
-    console.log('Test');
   }
 
   calenderIsClicked() {
@@ -83,8 +82,6 @@ export class PlanComponent implements OnInit {
     this.key = this.service.actualView;
   }
   viewWeek() {
-    this.lumen.fetchWeek(2019, 13);
-    this.lumen.fetchDay('2019-03-31');
     this.service.viewWeek();
     this.key = this.service.actualView;
     this.getWeek();
