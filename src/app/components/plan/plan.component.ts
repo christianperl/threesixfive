@@ -8,7 +8,7 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
 import moment from 'moment';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {environment} from '../../../environments/environment';
-import {first} from 'rxjs/operators';
+import {first, timeout} from 'rxjs/operators';
 import {LumenService} from '../../services/lumen/lumen.service';
 import {ChangeDetection} from '@angular/cli/lib/config/schema';
 
@@ -74,11 +74,12 @@ export class PlanComponent implements OnInit {
     }
     this.week = woche;
     this.weekMeals = [];
-    this.lumen.fetchWeek(2019, 13).subscribe(
+    this.lumen.fetchWeek(2019, this.weekNum).subscribe(
       week => {
         this.weekMeals = week;
       }
     );
+    timeout(1);
   }
 
   calenderIsClicked() {
