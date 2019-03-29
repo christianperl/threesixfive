@@ -3,8 +3,6 @@ import {PlanService} from '../../services/plan/plan.service';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import moment from 'moment';
 import {LumenService} from '../../services/lumen/lumen.service';
-import {ChangeDetection} from '@angular/cli/lib/config/schema';
-import {ChangeDetectorStatus} from '@angular/core/src/change_detection/constants';
 
 
 @Component({
@@ -12,6 +10,7 @@ import {ChangeDetectorStatus} from '@angular/core/src/change_detection/constants
   // changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './plan.component.html',
   styleUrls: ['./plan.component.scss'],
+  changeDetection: ChangeDetectionStrategy.Default,
   animations: [
     trigger('enterTrigger', [
       state('fadeIn', style({
@@ -71,7 +70,7 @@ export class PlanComponent implements OnInit {
     this.lumen.fetchWeek(2019, this.weekNum).subscribe(
       week => {
         this.weekMeals = week;
-        this.ref.detectChanges();
+        this.ref.markForCheck();
       }
     );
   }
