@@ -34,6 +34,7 @@ export class PlanComponent implements OnInit {
   actualDate = new Date();
   dateValue;
   week;
+  weekMeals;
   days =
     {
       'Monday': 0,
@@ -69,6 +70,11 @@ export class PlanComponent implements OnInit {
       woche.push(moment().add(i - a, 'days'));
     }
     this.week = woche;
+    this.lumen.fetchWeek(2019, 13).subscribe(
+      week => {
+        this.weekMeals = week;
+      }
+    );
   }
 
   calenderIsClicked() {

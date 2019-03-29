@@ -14,20 +14,15 @@ export class RecipeViewComponent implements OnInit {
   @Input() day: string;
   @Input() descr: string;
   @Input() info: string;
+  @Input() meals: any;
   mealNameType;
-  week;
   constructor(private service: PlanService, private lumen: LumenService) { }
 
   ngOnInit() {
-    this.lumen.fetchWeek(2019, 13).subscribe(
-      week => {
-        this.week = week;
-      }
-    );
     this.getMeal();
   }
   getMeal() {
     // return this.meal[this.day];
-    this.mealNameType = this.week[this.day];
+    this.mealNameType = this.meals[this.day];
   }
 }
