@@ -68,11 +68,7 @@ export class PlanComponent implements OnInit {
     for (let i = 0; i < 7; i++) {
       woche.push(moment().add(i - a, 'days'));
     }
-    this.lumen.fetchWeek(2019, 13).subscribe(
-      week => {
-        this.week = week;
-      }
-    );
+    this.week = woche;
   }
 
   calenderIsClicked() {
