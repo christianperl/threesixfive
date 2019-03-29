@@ -24,7 +24,6 @@ export class DayViewComponent implements OnInit {
     this.date = this.date.substring(0, 16);
     this.lumen.fetchDay('2019-03-31').subscribe(
       day => {
-        console.log(day);
         const result = {};
         const keys = Object.keys(day);
         for (let a = 0; a < keys.length; a++) {

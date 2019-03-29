@@ -1,5 +1,6 @@
 import {Component, Input, OnInit, ViewContainerRef} from '@angular/core';
 import {PlanService} from '../../services/plan/plan.service';
+import {LumenService} from '../../services/lumen/lumen.service';
 
 @Component({
   selector: 'app-recipe-view',
@@ -14,7 +15,7 @@ export class RecipeViewComponent implements OnInit {
   @Input() descr: string;
   @Input() info: string;
   mealNameType;
-  constructor(private service: PlanService) { }
+  constructor(private service: PlanService, private lumen: LumenService) { }
 
   ngOnInit() {
     this.getMeal();
