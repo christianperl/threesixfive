@@ -67,12 +67,17 @@ export class PlanComponent implements OnInit {
     }
     this.week = woche;
     this.weekMeals = [];
-    this.lumen.fetchWeek(2019, this.weekNum).subscribe(
-      week => {
-        this.weekMeals = week;
-        this.ref.markForCheck();
-      }
-    );
+    let promise = new Promise<any>((resolve, reject) => {
+      this.lumen.fetchWeek(2019, this.weekNum).subscribe(
+        week => {
+          this.weekMeals = week;
+          resolve(week);
+        }
+      );
+    });
+    promise.then((week) => {
+      this.weekMeals = week;
+    });
   }
 
   calenderIsClicked() {
