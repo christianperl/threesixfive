@@ -37,7 +37,7 @@ export class LumenService {
     return this.http.get(url, httpOptions)
       .subscribe(
         data => {
-          console.log(data);
+          return data;
         },
         error => {
           console.log(error);
