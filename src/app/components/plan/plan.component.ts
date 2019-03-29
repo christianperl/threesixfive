@@ -37,6 +37,7 @@ export class PlanComponent implements OnInit {
   dateValue;
   week;
   weekMeals;
+  weekNum = Number.parseInt(moment().format('w'));
   days =
     {
       'Monday': 0,
@@ -78,7 +79,6 @@ export class PlanComponent implements OnInit {
         this.weekMeals = week;
       }
     );
-    setTimeout(() => {});
   }
 
   calenderIsClicked() {
@@ -106,10 +106,29 @@ export class PlanComponent implements OnInit {
     }
     this.week = woche;
   }
+
   showDate(date) {
     this.service.dayIsClicked(date);
     this.clickedDate = this.service.clickedDate;
     this.service.viewDay();
     this.key = this.service.actualView;
+  }
+
+  nextWeek() {
+    this.weekNum++;
+    this.lumen.fetchWeek(2019, this.weekNum).subscribe(
+      week => {
+        this.weekMeals = week;
+      }
+    );
+  }
+
+  lastWeek() {
+    this.weekNum--;
+    this.lumen.fetchWeek(2019, this.weekNum).subscribe(
+      week => {
+        this.weekMeals = week;
+      }
+    );
   }
 }

@@ -1,7 +1,4 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {first, map} from 'rxjs/operators';
-import {environment} from '../../../environments/environment';
 import data from './response.json';
 import data1 from './response_day.json';
 import {LumenService} from '../lumen/lumen.service';
