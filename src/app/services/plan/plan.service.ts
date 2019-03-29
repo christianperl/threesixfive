@@ -27,22 +27,6 @@ export class PlanService {
   }
 
   viewWeek() {
-    this.lumen.fetchWeek(2019, 13).subscribe(
-      week => {
-        console.log(week);
-      }
-    );
-    this.lumen.fetchDay('2019-03-31').subscribe(
-      day => {
-        console.log(day);
-        const result = {};
-        const keys = Object.keys(data1);
-        for (let a = 0; a < keys.length; a++) {
-          result[keys[a]] = [Object.values(json)[a]['name'], Object.values(json)[a]['description']];
-        }
-        console.log(result);
-      }
-    );
     this.actualView = 'weekComponent';
   }
 
