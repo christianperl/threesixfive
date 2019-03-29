@@ -70,6 +70,7 @@ export class PlanComponent implements OnInit {
       woche.push(moment().add(i - a, 'days').format('YYYY-MM-DD'));
     }
     this.week = woche;
+    this.weekMeals = [];
     this.lumen.fetchWeek(2019, 13).subscribe(
       week => {
         this.weekMeals = week;
