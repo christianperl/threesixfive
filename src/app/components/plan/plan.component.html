@@ -1,4 +1,4 @@
-<div class="plan-grid" [ngSwitch]="key">
+<div class="plan-grid" [ngSwitch]="key" (change)="ngOnInit()">
 
   <a (click)="viewWeek() " *ngIf="key != 'weekComponent'"
      style="position: absolute;margin: 55px 0px;display: flex;flex-direction: column;align-items: center;"><i
