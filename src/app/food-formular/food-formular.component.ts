@@ -8,6 +8,7 @@ import {AuthenticationService} from '../login/_services';
 import {PlanService} from '../services/plan/plan.service';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {environment} from '../../environments/environment';
+import {LumenService} from '../services/lumen/lumen.service';
 
 @Component({
   selector: 'app-food-formular',
@@ -76,7 +77,7 @@ export class FoodFormularComponent implements OnInit {
 
   constructor(
     private router: Router,    private planService: PlanService,
-    private http: HttpClient
+    private lumen: LumenService
   ) {
 
     this.meals = [
@@ -228,7 +229,7 @@ export class FoodFormularComponent implements OnInit {
     };
 
     this.buildDays();
-    this.planService.sendForm(JSON.stringify(this.formObject));
+    this.lumen.postForm(JSON.stringify(this.formObject));
   }
 
 

@@ -57,42 +57,5 @@ export class PlanService {
       [Object.values(json)[index]['ingredients'], Object.values(json)[index]['directions'], [Object.values(json)[index]['nutrition']]];
     return result;
   }
-
-  sendForm(json) {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Authentication': JSON.parse(localStorage.getItem('currentUser')).api_token
-      })
-    };
-    this.http.post<any>(`${environment.apiUrl}/form`, json, httpOptions)
-      .pipe(first())
-      .subscribe(
-        data => {
-          console.log(data);
-        },
-        error => {
-          console.log('error');
-        });
-  }
 }
-
- /* getWeek(year, num) {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Authentication': JSON.parse(localStorage.getItem('currentUser')).api_token
-      })
-    };
-    const url = `${environment.apiUrl}/week/` + year + '/' + num;
-    console.log(url);
-    return this.http.get(url, httpOptions)
-      .pipe(first())
-      .subscribe(
-        data => {
-          this.getTypeAndNameFromWeek(data);
-        },
-        error => {
-          console.log('error');
-        });
-  }*/
 

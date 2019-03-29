@@ -104,23 +104,4 @@ export class PlanComponent implements OnInit {
     this.service.viewDay();
     this.key = this.service.actualView;
   }
-
-  fetchWeek(year, num) {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Authentication': JSON.parse(localStorage.getItem('currentUser')).api_token
-      })
-    };
-    const url = `${environment.apiUrl}/week/` + year + '/' + num;
-    console.log(url);
-    return this.http.get(url, httpOptions)
-      .pipe(first())
-      .subscribe(
-        data => {
-          console.log(data);
-        },
-        error => {
-          console.log(error);
-        });
-  }
 }
