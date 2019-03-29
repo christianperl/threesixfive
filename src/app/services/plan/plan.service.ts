@@ -5,6 +5,7 @@ import {environment} from '../../../environments/environment';
 import data from './response.json';
 import data1 from './response_day.json';
 import {LumenService} from '../lumen/lumen.service';
+import {copyObj} from '@angular/animations/browser/src/util';
 @Injectable({
   providedIn: 'root'
 })
@@ -45,7 +46,7 @@ export class PlanService {
     this.lumen.fetchDay('2019-03-31').subscribe(
       response => {
         console.log(response);
-        json =  response;
+        json =  copyObj(response);
       }
     );
     console.log(json);
