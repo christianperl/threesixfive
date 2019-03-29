@@ -39,9 +39,9 @@ export class DayViewComponent implements OnInit {
     // console.log(this.service.getSpecificInformation('breakfast'));
   }
   getInformation() {
-
-    const key = Object.keys(this.dailyMeal[this.value])[0];
-    return {'key': key, 'values': this.dailyMeal[this.value][key]};
+    // const key = Object.keys(this.dailyMeal[this.value])[0];
+    // return {'key': key, 'values': this.dailyMeal[this.value][key]};
+    return this.dailyMeal[this.value];
   }
   cancel() {
     this.recipieView = false;
