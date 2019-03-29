@@ -82,11 +82,6 @@ export class PlanComponent implements OnInit {
     this.key = this.service.actualView;
   }
   viewWeek() {
-    console.log(this.lumen.fetchWeek(2019, 13).subscribe(
-      data => {
-        console.log(data);
-      }
-    ));
     this.service.viewWeek();
     this.key = this.service.actualView;
     this.getWeek();

@@ -40,7 +40,15 @@ export class PlanService {
   }
 
   getNameAndDescription() {
-    const json = this.lumen.fetchDay('2019-03-31');
+    let json = null;
+
+    this.lumen.fetchDay('2019-03-31').subscribe(
+      response => {
+        console.log(response);
+        json =  response;
+      }
+    );
+    console.log(json);
     const result = {};
     const keys = Object.keys(data1);
     for (let a = 0; a < keys.length; a++) {
