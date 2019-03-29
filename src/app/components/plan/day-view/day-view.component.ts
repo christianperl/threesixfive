@@ -20,9 +20,8 @@ export class DayViewComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.date = this.Date.toString();
-    this.date = this.date.substring(0, 16);
-    this.lumen.fetchDay(this.date).subscribe(
+    this.dailyMeal = [];
+    this.lumen.fetchDay(this.date.toString()).subscribe(
       day => {
         const result = {};
         const keys = Object.keys(day);
