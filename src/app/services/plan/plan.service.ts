@@ -4,6 +4,7 @@ import {first, map} from 'rxjs/operators';
 import {environment} from '../../../environments/environment';
 import data from './response.json';
 import data1 from './response_day.json';
+import {LumenService} from '../lumen/lumen.service';
 @Injectable({
   providedIn: 'root'
 })
@@ -14,7 +15,7 @@ export class PlanService {
   json = (<any>data);
   json1 = (<any>data1);
 
-  constructor(private http: HttpClient) {
+  constructor(private lumen: LumenService) {
   }
 
   dayIsClicked(date) {
@@ -39,7 +40,7 @@ export class PlanService {
   }
 
   getNameAndDescription() {
-    const json = this.json1;
+    const json = this.lumen.fetchDay('2019-03-31');
     const result = {};
     const keys = Object.keys(data1);
     for (let a = 0; a < keys.length; a++) {

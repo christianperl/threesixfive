@@ -22,7 +22,7 @@ export class DayViewComponent implements OnInit {
   ngOnInit() {
     this.date = this.Date.toString();
     this.date = this.date.substring(0, 16);
-    this.dailyMeal = this.lumen.fetchDay('2019-03-31');
+    this.dailyMeal = this.getDailyMeal();
   }
 
   clickOnRecipie(type) {
