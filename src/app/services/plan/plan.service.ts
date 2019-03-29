@@ -34,11 +34,6 @@ export class PlanService {
     this.actualView = 'dayComponent';
   }
 
-  getTypeAndNameFromWeek() {
-    const json = this.json;
-    return json;
-  }
-
   getNameAndDescription() {
     let json = this.json1;
     console.log(json);

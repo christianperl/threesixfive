@@ -1,6 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {PlanService} from '../../../services/plan/plan.service';
 import {LumenService} from '../../../services/lumen/lumen.service';
+import data1 from '../../../services/plan/response_day';
+import {forEach} from '@angular/router/src/utils/collection';
 
 @Component({
   selector: 'app-day-view',
@@ -16,6 +18,7 @@ export class DayViewComponent implements OnInit {
   recipieView: boolean;
   value;
   dailyMeal;
+  dailyMealDetail;
   constructor(private service: PlanService, private lumen: LumenService) {
   }
 
@@ -29,6 +32,13 @@ export class DayViewComponent implements OnInit {
         }
 
         this.dailyMeal = result;
+
+        ['breakfast', 'lunch', 'main dish', 'snack'].forEach(type => {
+          const keys = Object.keys(day);
+          const index = keys.indexOf(type);
+          result[Object.values(day)[index]['name']] =
+            [Object.values(day)[index]['ingredients'], Object.values(day)[index]['directions'], [Object.values(day)[index]['nutrition']]];
+        });
       }
     );
   }
@@ -39,9 +49,8 @@ export class DayViewComponent implements OnInit {
     // console.log(this.service.getSpecificInformation('breakfast'));
   }
   getInformation() {
-    // const key = Object.keys(this.dailyMeal[this.value])[0];
-    // return {'key': key, 'values': this.dailyMeal[this.value][key]};
-    return this.dailyMeal[this.value];
+    const key = Object.keys(this.dailyMeal[this.value])[0];
+    return {'key': key, 'values': this.dailyMeal[this.value][key]};
   }
   cancel() {
     this.recipieView = false;
