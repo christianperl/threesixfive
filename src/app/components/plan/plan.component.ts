@@ -1,8 +1,10 @@
-import {ChangeDetectionStrategy, Component, OnInit,} from '@angular/core';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit,} from '@angular/core';
 import {PlanService} from '../../services/plan/plan.service';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import moment from 'moment';
 import {LumenService} from '../../services/lumen/lumen.service';
+import {ChangeDetection} from '@angular/cli/lib/config/schema';
+import {ChangeDetectorStatus} from '@angular/core/src/change_detection/constants';
 
 
 @Component({
@@ -10,7 +12,6 @@ import {LumenService} from '../../services/lumen/lumen.service';
   // changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './plan.component.html',
   styleUrls: ['./plan.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [
     trigger('enterTrigger', [
       state('fadeIn', style({
@@ -42,7 +43,7 @@ export class PlanComponent implements OnInit {
       'Sunday': 6
     };
   iterator = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-  constructor(private service: PlanService, private lumen: LumenService) {
+  constructor(private service: PlanService, private lumen: LumenService, private ref: ChangeDetectorRef) {
   }
 
   ngOnInit() {
@@ -70,9 +71,9 @@ export class PlanComponent implements OnInit {
     this.lumen.fetchWeek(2019, this.weekNum).subscribe(
       week => {
         this.weekMeals = week;
+        this.ref.detectChanges();
       }
     );
-    this.viewWeek();
   }
 
   calenderIsClicked() {
