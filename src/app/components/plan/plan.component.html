@@ -2,28 +2,13 @@
 
   <a (click)="viewWeek() " *ngIf="key != 'weekComponent'"
      style="position: absolute;margin: 55px 0px;display: flex;flex-direction: column;align-items: center;"><i
-    class="pi pi-arrow-left" style="font-size: 3em; color: #4a5a62"></i><span style="color: #4a5a62">BACK</span></a>
-
-
-  <div *ngSwitchCase="'monthComponent'" [@enterTrigger]="'fadeIn'">
-
-    <a (click)="viewWeek() " *ngIf="key != 'weekComponent'"
-       style="position: absolute;margin: 55px 0px;display: flex;flex-direction: column;align-items: center;"><i
-      class="pi pi-arrow-left" style="font-size: 3em; color: #4a5a62"></i><span style="color: #4a5a62">BACK</span></a>
-    <div class="title">
-      <h1>Month</h1>
-      <span>Click on a <a>Day</a> for more details!</span>
-    </div>
-
-    <p-calendar class="calender" dateFormat="dd.mm.yy" [(ngModel)]="dateValue" [inline]="true"
-                (onSelect)="calenderIsClicked()" [locale]="en"></p-calendar>
-  </div>
+    class="pi pi-arrow-left" style="font-size: 3em; color: #2B898B"></i><span style="color: #213037">BACK</span></a>
 
 
   <div *ngSwitchCase="'weekComponent'">
-    <a (click)="viewMonth() " *ngIf="key != 'monthComponent'"
+    <a  *ngIf="key != 'monthComponent'"
        style="position: absolute;margin: 55px 0px;display: flex;flex-direction: column;align-items: center;"><i
-      class="pi pi-calendar" style="font-size: 3em; color: #4a5a62"></i><span style="color: #4a5a62">MONTH</span></a>
+      class="pi pi-download" style="font-size: 3em; color: #2B898B"></i><span style="color: #213037">SAVE PDF</span></a >
     <div class="title">
       <h1>Week</h1>
       <span>Click on each <a>Day</a> for more details!</span>
@@ -34,39 +19,39 @@
 
       <div class="ui-g" style="flex-wrap: nowrap">
         <a (click)="viewWeek()" style=" margin: 30px 20px; display: flex; flex-direction: column; align-items: center;"><i
-          class="pi pi-arrow-left" style="font-size: 2em; color: #4a5a62"></i><span
-          style="color: #4a5a62">LEFT</span></a>
+          class="pi pi-arrow-left" style="font-size: 2em; color: #2B898B"></i><span
+          style="color: #213037">LEFT</span></a>
 
         <app-recipe-view class="ui-g-12 ui-md-3 ui-lg-2" [day]="'Monday'" [view]="'month'" (click)="showDate(week[0])"
-                         style="margin: 20px 10px;">
+                         style="margin: 20px 5px;">
         </app-recipe-view>
 
         <app-recipe-view class="ui-g-12 ui-md-3 ui-lg-2" [day]="'Tuesday'" [view]="'month'" (click)="showDate(week[1])"
-                         style="margin: 20px 10px;">
+                         style="margin: 20px 5px;">
         </app-recipe-view>
 
         <app-recipe-view class="ui-g-12 ui-md-3 ui-lg-2" [day]="'Wednesday'" [view]="'month'"
-                         (click)="showDate(week[2])" style="margin: 20px 10px;">
+                         (click)="showDate(week[2])" style="margin: 20px 5px;">
         </app-recipe-view>
 
         <app-recipe-view class="ui-g-12 ui-md-3 ui-lg-2" [day]="'Thursday'" [view]="'month'" (click)="showDate(week[3])"
-                         style="margin: 20px 10px;">
+                         style="margin: 20px 5px;">
         </app-recipe-view>
 
         <app-recipe-view class="ui-g-12 ui-md-3 ui-lg-2" [day]="'Friday'" [view]="'month'" (click)="showDate(week[4])"
-                         style="margin: 20px 10px;">
+                         style="margin: 20px 5px;">
         </app-recipe-view>
 
         <app-recipe-view class="ui-g-12 ui-md-3 ui-lg-2" [day]="'Saturday'" [view]="'month'" (click)="showDate(week[5])"
-                         style="margin: 20px 10px;">
+                         style="margin: 20px 5px;">
         </app-recipe-view>
 
         <app-recipe-view class="ui-g-12 ui-md-3 ui-lg-2" [day]="'Sunday'" [view]="'month'" (click)="showDate(week[6])"
-                         style="margin: 20px 10px;">
+                         style="margin: 20px 5px;">
         </app-recipe-view>
 
         <a (click)="viewWeek()" style=" margin: 30px 20px; display: flex; flex-direction: column; align-items: center;"><i
-          class="pi pi-arrow-right" style="font-size: 2em; color: #4a5a62"></i><span style="color: #4a5a62">RIGHT</span></a>
+          class="pi pi-arrow-right" style="font-size: 2em; color: #2B898B"></i><span style="color: #213037">RIGHT</span></a>
       </div>
 
 

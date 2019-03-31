@@ -5,9 +5,9 @@
   <div class="ui-g" *ngFor="let item of getMeal()| keyvalue">
     <div class="content">
       <span>{{(item.key )}}</span>
-      <i class="pi pi-refresh" title="Reload" style="font-size: 1em; color: #4a5a62; margin-left: 5px"></i>
-      <p>{{item.value }}</p>
-      <hr>
+      <i class="pi pi-refresh" title="Reload" style="font-size: 1em; color: #213037; margin-left: 5px"></i>
+      <p style="height: 40px">{{item.value }}</p>
+      <hr style="min-width: 130px; border-color: orange">
     </div>
   </div>
 </div>
