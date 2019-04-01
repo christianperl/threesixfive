@@ -29,7 +29,6 @@ import {LumenService} from '../../services/lumen/lumen.service';
 export class PlanComponent implements OnInit {
   en: any;
   weekMeals;
-  firstTime;
   clickedDate;
   key = this.service.actualView;
   actualDate = new Date();
@@ -83,9 +82,6 @@ export class PlanComponent implements OnInit {
   }
 
   ngOnInit() {
-    if (this.firstTime) {
-      this.showToast();
-    }
     this.en = {
       firstDayOfWeek: 0,
       dayNames: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
@@ -99,9 +95,7 @@ export class PlanComponent implements OnInit {
       dateFormat: 'dd/mm/yy'
     };
     if (JSON.parse(localStorage.getItem('currentUser')).hasOwnProperty('init-reg')) {
-      this.firstTime = true;
-    } else {
-      this.firstTime = false;
+      this.showToast();
     }
     const b = moment().format('dddd');
     const a = this.days[b];
@@ -139,10 +133,9 @@ export class PlanComponent implements OnInit {
   getWeek() {
     const b = moment().format('dddd');
     const a = this.days[b];
-    const monday = moment().subtract(a, 'days').format('MMM Do YY');
     const woche = [];
     for (let i = 0; i < 7; i++) {
-      woche.push(moment().add(i - a, 'days'));
+      woche.push(moment().add(i - a, 'days').format('YYYY-MM-DD'));
     }
     this.week = woche;
   }

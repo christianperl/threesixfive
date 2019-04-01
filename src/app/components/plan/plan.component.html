@@ -6,7 +6,7 @@
 
 
   <div *ngSwitchCase="'weekComponent'">
-    <a *ngIf="key != 'monthComponent'"
+    <a *ngIf="weekMeals !== false"
        style="position: absolute;margin: 55px 0px;display: flex;flex-direction: column;align-items: center;"><i
       class="pi pi-download" style="font-size: 3em; color: #2B898B"></i><span style="color: #213037">SAVE PDF</span></a>
     <div class="title">
@@ -1149,7 +1149,7 @@ MDE5LTA0LTAxVDE4OjM1OjAwKzAzOjAwSD0JcAAAAABJRU5ErkJggg==" />
 
 
       <div class="ui-g" style="flex-wrap: nowrap">
-        <a (click)="lastWeek()" style=" margin: 30px 20px; display: flex; flex-direction: column; align-items: center;"><i
+        <a (click)="lastWeek()" *ngIf="weekMeals !== false" style=" margin: 30px 20px; display: flex; flex-direction: column; align-items: center;"><i
           class="pi pi-arrow-left" style="font-size: 2em; color: #2B898B"></i><span
           style="color: #213037">LEFT</span></a>
 
