@@ -1,11 +1,14 @@
 import {Component, OnInit} from '@angular/core';
-import {first} from 'rxjs/operators';
+import {first, map} from 'rxjs/operators';
 import {Router} from '@angular/router';
 import {SelectItem} from 'primeng/api';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {forEach} from '@angular/router/src/utils/collection';
 import {AuthenticationService} from '../login/_services';
 import {PlanService} from '../services/plan/plan.service';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {environment} from '../../environments/environment';
+import {LumenService} from '../services/lumen/lumen.service';
 
 @Component({
   selector: 'app-food-formular',
@@ -41,40 +44,40 @@ export class FoodFormularComponent implements OnInit {
   checksaturday: boolean = false;
   checksunday: boolean = false;
   checkedObj: object = {
-  'checked11': null,
-  'checked21': null,
-  'checked31': null,
-  'checked41': null,
-  'checked12': null,
-  'checked22': null,
-  'checked32': null,
-  'checked42': null,
-  'checked13': null,
-  'checked23': null,
-  'checked33': null,
-  'checked43': null,
-  'checked14': null,
-  'checked24': null,
-  'checked34': null,
-  'checked44': null,
-  'checked15': null,
-  'checked25': null,
-  'checked35': null,
-  'checked45': null,
-  'checked16': null,
-  'checked26': null,
-  'checked36': null,
-  'checked46': null,
-  'checked17': null,
-  'checked27': null,
-  'checked37': null,
-  'checked47': null
-};
+    'checked11': null,
+    'checked21': null,
+    'checked31': null,
+    'checked41': null,
+    'checked12': null,
+    'checked22': null,
+    'checked32': null,
+    'checked42': null,
+    'checked13': null,
+    'checked23': null,
+    'checked33': null,
+    'checked43': null,
+    'checked14': null,
+    'checked24': null,
+    'checked34': null,
+    'checked44': null,
+    'checked15': null,
+    'checked25': null,
+    'checked35': null,
+    'checked45': null,
+    'checked16': null,
+    'checked26': null,
+    'checked36': null,
+    'checked46': null,
+    'checked17': null,
+    'checked27': null,
+    'checked37': null,
+    'checked47': null
+  };
   formObject;
 
   constructor(
     private router: Router,    private planService: PlanService,
-
+    private lumen: LumenService
   ) {
 
     this.meals = [
@@ -178,7 +181,7 @@ export class FoodFormularComponent implements OnInit {
         clickedDays.push(days[i]);
       }
     }
-    const meals = ['Breakfast', 'Lunch', 'Dinner', 'Snack'];
+    const meals = ['breakfast', 'lunch', 'main dish', 'snack'];
     const checkedMeals = [];
     const result = new Map();
 
@@ -226,8 +229,11 @@ export class FoodFormularComponent implements OnInit {
     };
 
     this.buildDays();
-    console.log(JSON.stringify(this.formObject));
-    this.planService.sendForm(JSON.stringify(this.formObject));
+    this.lumen.postForm(JSON.stringify(this.formObject)).subscribe(
+      response => {
+        console.log(response);
+      }
+    );
   }
 
 

@@ -68,11 +68,11 @@ export class LumenService {
   }
 
   pdf(year, week) {
-    const url = `${environment.apiUrl}/pdf/` + year + '/' + week;
+   /* const url = `${environment.apiUrl}/pdf/` + year + '/' + week;
     return this.http.get(url, this.httpOptions).map(
       (res) => {
         return new Blob([res.blob()], { type: 'application/pdf' });
-      });
+      });*/
   }
 
   regenerate(date, type) {

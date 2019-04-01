@@ -7,14 +7,12 @@ import {SettingsComponent} from './components/settings/settings.component';
 import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {EntryComponent} from './components/list/entry/entry.component';
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {GroceryListService} from './services/grocery-list/grocery-list.service';
 import {EntryCreatorComponent} from './components/list/entry-creator/entry-creator.component';
-import {CheckedEntryComponent} from './components/list/checked-entry/checked-entry.component';
 import {DayViewComponent} from './components/plan/day-view/day-view.component';
 import {RecipeViewComponent} from './components/recipe-view/recipe-view.component';
 import {MatExpansionModule} from '@angular/material/expansion';
@@ -61,9 +59,7 @@ import {TabViewModule} from 'primeng/tabview';
     PlanComponent,
     ListComponent,
     SettingsComponent,
-    EntryComponent,
     EntryCreatorComponent,
-    CheckedEntryComponent,
     DayViewComponent,
     RecipeViewComponent,
     AlertComponent,
