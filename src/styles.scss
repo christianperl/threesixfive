@@ -47,6 +47,46 @@ body h2{
 }
 .content:not(i) {text-align: start}
 
+//Loader
+@keyframes ui-progress-spinner-color {
+  100%,
+  0% {
+    stroke: #2B898B;
+  }
+  20% {
+    stroke: #26704F;
+  }
+  40% {
+    stroke: #213037;
+  }
+  60% {
+    stroke: #f88e28;
+  }
+  80% {
+    stroke: #F8B735;
+  }
+}
+.overlay {
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: #F5F5F6;
+}
+.overlay__inner {
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.overlay__content {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
 
 //Card
 body .ui-widget {
