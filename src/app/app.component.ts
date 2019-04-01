@@ -1,8 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {User} from './login/_models';
+import {Component} from '@angular/core';
 import {Router} from '@angular/router';
 import {AuthenticationService} from './login/_services';
-import {OnInit} from '@angular/core';
+
 
 @Component({
   selector: 'app-root',
