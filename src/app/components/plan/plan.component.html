@@ -1,6 +1,6 @@
 <div class="plan-grid" [ngSwitch]="key">
 
-  <a *ngIf="weekMeals !== null && weekMeals !== false" (click)="lastWeek()"
+  <a (click)="viewWeek()" *ngIf="key != 'weekComponent'"
      style="position: absolute;margin: 55px 0px;display: flex;flex-direction: column;align-items: center;"><i
     class="pi pi-arrow-left" style="font-size: 3em; color: #2B898B"></i><span style="color: #213037">BACK</span></a>
 
@@ -18,7 +18,6 @@
     <p-toast modal="true" key="myKey2" [style]="{marginTop: '-8%'}" position="center"></p-toast>
 
     <div class="firstTime" *ngIf="firstTime">
-      <button type="button" pButton (click)="showToast();showToast1()" label="Test"></button>
     </div>
 
     <div class="loader" *ngIf="weekMeals === null">
@@ -1150,7 +1149,7 @@ MDE5LTA0LTAxVDE4OjM1OjAwKzAzOjAwSD0JcAAAAABJRU5ErkJggg==" />
 
 
       <div class="ui-g" style="flex-wrap: nowrap">
-        <a (click)="viewWeek()" style=" margin: 30px 20px; display: flex; flex-direction: column; align-items: center;"><i
+        <a (click)="lastWeek()" style=" margin: 30px 20px; display: flex; flex-direction: column; align-items: center;"><i
           class="pi pi-arrow-left" style="font-size: 2em; color: #2B898B"></i><span
           style="color: #213037">LEFT</span></a>
 
@@ -1182,7 +1181,7 @@ MDE5LTA0LTAxVDE4OjM1OjAwKzAzOjAwSD0JcAAAAABJRU5ErkJggg==" />
                          style="margin: 20px 5px;">
         </app-recipe-view>
 
-        <a *ngIf="weekMeals !== null && weekMeals !== false" (click)="nextWeek()"
+        <a (click)="nextWeek()"
            style=" margin: 30px 20px; display: flex; flex-direction: column; align-items: center;"><i
           class="pi pi-arrow-right" style="font-size: 2em; color: #2B898B"></i><span style="color: #213037">RIGHT</span></a>
       </div>

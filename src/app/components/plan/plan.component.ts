@@ -83,10 +83,13 @@ export class PlanComponent implements OnInit {
   }
 
   ngOnInit() {
+    if (this.firstTime) {
+      this.showToast();
+    }
     this.en = {
       firstDayOfWeek: 0,
       dayNames: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-      dayNamesShort: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun',],
+      dayNamesShort: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun', ],
       dayNamesMin: ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'],
       monthNames: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August',
         'September', 'October', 'November', 'December'],
@@ -113,7 +116,6 @@ export class PlanComponent implements OnInit {
         this.weekMeals = week;
       }
     );
-
   }
 
   calenderIsClicked() {
