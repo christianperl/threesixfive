@@ -52,27 +52,33 @@ export class PlanComponent implements OnInit {
   }
 
   showToast() {
-    this.messageService.add({key: 'myKey1', severity: 'info', summary: 'Up here is your Navigation', detail: 'Check out your Profile or Groceries!', sticky: 'true'});
+    this.messageService.add({
+      key: 'myKey1',
+      severity: 'info',
+      summary: 'Up here is your Navigation',
+      detail: 'Check out your Profile or Groceries!',
+      sticky: true
+    });
     this.messageService.add({
       key: 'myKey2',
       severity: 'info',
       summary: 'Weekplan',
       detail: 'Here you see your plan! Click on a Day for a more detailed view.',
-      sticky: 'true'
+      sticky: true
     });
     this.messageService.add({
       key: 'myKey3',
       severity: 'info',
       summary: 'Details',
       detail: 'Click on a day for more details',
-      sticky: 'true'
+      sticky: true
     });
     this.messageService.add({
       key: 'myKey4',
       severity: 'info',
       summary: 'Details',
       detail: 'Click on a day for more details',
-      sticky: 'true'
+      sticky: true
     });
   }
 
@@ -90,10 +96,10 @@ export class PlanComponent implements OnInit {
       dateFormat: 'dd/mm/yy'
     };
     if (JSON.parse(localStorage.getItem('currentUser')).hasOwnProperty('init-reg')) {
-       this.firstTime = true;
-     } else {
-       this.firstTime = false;
-     }
+      this.firstTime = true;
+    } else {
+      this.firstTime = false;
+    }
     const b = moment().format('dddd');
     const a = this.days[b];
     const woche = [];
