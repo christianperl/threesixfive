@@ -78,4 +78,8 @@ export class LumenService {
   regenerate(date, type) {
     return this.http.post<any>(`${environment.apiUrl}/regen`, {date: date, type: type}, this.httpOptions);
   }
+  logout() {
+    let email = localStorage.getItem('currentUser')['email'];
+    return this.http.post<any>(`${environment.apiUrl}/user/logout`, email, this.httpOptions);
+  }
 }

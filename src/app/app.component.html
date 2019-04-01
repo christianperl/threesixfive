@@ -1,5 +1,5 @@
 
-<app-topbar></app-topbar>
+<app-topbar *ngIf="currentUser"></app-topbar>
 
 <div class="" *ngIf="router.url != '/' && router.url != '/plan' && router.url != '/list'&& router.url != '/settings'; else app">
   <div class="container">
@@ -10,14 +10,6 @@
       </div>
     </div>
   </div>
-</div>
-
-<ng-template #app>
-  <router-outlet></router-outlet>
-</ng-template>
-
-<!--<app-alert></app-alert>-->
-<!--<router-outlet></router-outlet>-->
 
 <!--<div id="container">-->
 
