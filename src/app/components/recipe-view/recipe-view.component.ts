@@ -1,5 +1,6 @@
 import {Component, Input, OnInit, ViewContainerRef} from '@angular/core';
 import {PlanService} from '../../services/plan/plan.service';
+import {LumenService} from '../../services/lumen/lumen.service';
 
 @Component({
   selector: 'app-recipe-view',
@@ -13,14 +14,15 @@ export class RecipeViewComponent implements OnInit {
   @Input() day: string;
   @Input() descr: string;
   @Input() info: string;
-  meal;
-  constructor(private service: PlanService) { }
+  @Input() meals: any;
+  mealNameType;
+  constructor(private service: PlanService, private lumen: LumenService) { }
 
   ngOnInit() {
-    // this.meal = this.service.getWeek(2019,  12);
+    this.getMeal();
   }
   getMeal() {
     // return this.meal[this.day];
-    return this.service.getTypeAndNameFromWeek()[this.day];
+    this.mealNameType = this.meals;
   }
 }

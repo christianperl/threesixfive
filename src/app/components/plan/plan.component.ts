@@ -6,6 +6,7 @@ import {PlanService} from '../../services/plan/plan.service';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import moment from 'moment';
 import {MessageService} from 'primeng/api';
+import {LumenService} from '../../services/lumen/lumen.service';
 
 
 @Component({
@@ -33,6 +34,7 @@ export class PlanComponent implements OnInit {
   key = this.service.actualView;
   actualDate = new Date();
   dateValue;
+  weekNum = Number.parseInt(moment().format('w'));
   week;
   days =
     {
@@ -46,7 +48,7 @@ export class PlanComponent implements OnInit {
     };
   iterator = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
-  constructor(private service: PlanService, private messageService: MessageService) {
+  constructor(private service: PlanService, private messageService: MessageService, private lumen: LumenService) {
   }
 
   showToast() {
@@ -74,12 +76,6 @@ export class PlanComponent implements OnInit {
     });
   }
 
-  /* showToast1() {
-     this.messageService.addAll([
-       {severity: 'info', summary: 'Tipp!', detail: 'Check out your current Weekplan'}
-     ]);
-   }*/
-
   ngOnInit() {
     this.en = {
       firstDayOfWeek: 0,
@@ -93,16 +89,11 @@ export class PlanComponent implements OnInit {
       clear: 'Clear',
       dateFormat: 'dd/mm/yy'
     };
-    /* if (JSON.parse(localStorage.getItem('currentUser')).hasOwnProperty('init-reg')) {
+    if (JSON.parse(localStorage.getItem('currentUser')).hasOwnProperty('init-reg')) {
        this.firstTime = true;
      } else {
        this.firstTime = false;
-     }*/
-    if (true) {
-      this.firstTime = true;
-    } else {
-      this.firstTime = false;
-    }
+     }
     const b = moment().format('dddd');
     const a = this.days[b];
     const woche = [];
@@ -111,6 +102,11 @@ export class PlanComponent implements OnInit {
     }
     this.week = woche;
     this.weekMeals = null;
+    this.lumen.fetchWeek(2019, this.weekNum).subscribe(
+      week => {
+        this.weekMeals = week;
+      }
+    );
 
   }
 
@@ -148,5 +144,28 @@ export class PlanComponent implements OnInit {
     this.clickedDate = this.service.clickedDate;
     this.service.viewDay();
     this.key = this.service.actualView;
+  }
+
+  nextWeek() {
+    this.weekNum++;
+    this.weekMeals = null;
+    this.lumen.fetchWeek(2019, this.weekNum).subscribe(
+      week => {
+        this.weekMeals = week;
+      }
+    );
+  }
+
+  lastWeek() {
+    this.weekNum--;
+    this.weekMeals = null;
+    this.lumen.fetchWeek(2019, this.weekNum).subscribe(
+      week => {
+        this.weekMeals = week;
+      },
+      error => {
+        this.weekMeals = false;
+      }
+    );
   }
 }

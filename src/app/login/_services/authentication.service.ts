@@ -21,25 +21,15 @@ export class AuthenticationService {
   }
 
   login(email: string, password: string) {
-        return this.http.post<any>(`${environment.apiUrl}/user/login`, {email: email, password: password})
-          .pipe(map(user => {
-            if (user && user.api_token) {
-              localStorage.setItem('currentUser', JSON.stringify(user));
-              this.currentUserSubject.next(user);
-            }
-            console.log(user);
-          }));
-    /*return this.http.post<any>(`${environment.apiUrl}/users/authenticate`, { email, password })
-        .pipe(map(user => {
-            // login successful if there's a jwt token in the response
-            if (user && user.name) {
-                // store user details and jwt token in local storage to keep user logged in between page refreshes
-                localStorage.setItem('currentUser', JSON.stringify(user));
-                this.currentUserSubject.next(user);
-            }
-
-            return user;
-        }));*/
+    return this.http.post<any>(`${environment.apiUrl}/user/login`, {email: email, password: password})
+      .pipe(map(user => {
+        if (user && 'auth-token' in user) {
+          localStorage.setItem('currentUser', JSON.stringify(user));
+          this.currentUserSubject.next(user);
+          return user;
+        }
+        console.log(user);
+      }));
   }
 
   logout() {

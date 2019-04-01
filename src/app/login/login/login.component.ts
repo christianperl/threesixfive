@@ -55,8 +55,12 @@ export class LoginComponent implements OnInit {
     this.authenticationService.login(this.f.email.value, this.f.password.value)
       .pipe(first())
       .subscribe(
-        data => {
-          this.router.navigate([this.returnUrl]);
+        user => {
+          if (user.hasOwnProperty('init-reg')) {
+            this.router.navigate([this.returnUrl]);
+          } else {
+            this.router.navigate(['/plan']);
+          }
         },
         error => {
           this.alertService.error(error);

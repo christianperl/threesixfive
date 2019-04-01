@@ -1,6 +1,6 @@
 <div class="plan-grid" [ngSwitch]="key">
 
-  <a (click)="viewWeek() " *ngIf="key != 'weekComponent'"
+  <a *ngIf="weekMeals !== null && weekMeals !== false" (click)="lastWeek()"
      style="position: absolute;margin: 55px 0px;display: flex;flex-direction: column;align-items: center;"><i
     class="pi pi-arrow-left" style="font-size: 3em; color: #2B898B"></i><span style="color: #213037">BACK</span></a>
 
@@ -14,14 +14,14 @@
       <span>Click on each <a>Day</a> for more details!</span>
     </div>
 
-    <p-toast  modal="true" key="myKey1" [style]="{marginTop: '30px'}" position="top-left"></p-toast>
-    <p-toast  modal="true" key="myKey2" [style]="{marginTop: '-8%'}" position="center"></p-toast>
+    <p-toast modal="true" key="myKey1" [style]="{marginTop: '30px'}" position="top-left"></p-toast>
+    <p-toast modal="true" key="myKey2" [style]="{marginTop: '-8%'}" position="center"></p-toast>
 
     <div class="firstTime" *ngIf="firstTime">
       <button type="button" pButton (click)="showToast();showToast1()" label="Test"></button>
     </div>
 
-    <!--<div class="loader" *ngIf="weekMeals === null">
+    <div class="loader" *ngIf="weekMeals === null">
       <div class="overlay">
         <div class="overlay__inner">
           <div class="overlay__content">
@@ -1140,7 +1140,7 @@ MDE5LTA0LTAxVDE4OjM1OjAwKzAzOjAwSD0JcAAAAABJRU5ErkJggg==" />
           </svg>
         </div>
       </div>
-    </div>-->
+    </div>
 
     <div class="WeekError" *ngIf="weekMeals === false">
       <p>This week is not available.</p>
@@ -1154,35 +1154,36 @@ MDE5LTA0LTAxVDE4OjM1OjAwKzAzOjAwSD0JcAAAAABJRU5ErkJggg==" />
           class="pi pi-arrow-left" style="font-size: 2em; color: #2B898B"></i><span
           style="color: #213037">LEFT</span></a>
 
-        <app-recipe-view class="ui-g-12 ui-md-3 ui-lg-2" [day]="'Monday'" [view]="'month'" (click)="showDate(week[0])"
+        <app-recipe-view class="ui-g-12 ui-md-3 ui-lg-2" *ngIf="weekMeals !== null && weekMeals !== false" [meals]="weekMeals['Monday']" [day]="'Monday'" [view]="'month'" (click)="showDate(week[0])"
                          style="margin: 20px 5px;">
         </app-recipe-view>
 
-        <app-recipe-view class="ui-g-12 ui-md-3 ui-lg-2" [day]="'Tuesday'" [view]="'month'" (click)="showDate(week[1])"
+        <app-recipe-view class="ui-g-12 ui-md-3 ui-lg-2" *ngIf="weekMeals !== null && weekMeals !== false" [meals]="weekMeals['Tuesday']" [day]="'Tuesday'" [view]="'month'" (click)="showDate(week[1])"
                          style="margin: 20px 5px;">
         </app-recipe-view>
 
-        <app-recipe-view class="ui-g-12 ui-md-3 ui-lg-2" [day]="'Wednesday'" [view]="'month'"
+        <app-recipe-view class="ui-g-12 ui-md-3 ui-lg-2" *ngIf="weekMeals !== null && weekMeals !== false" [meals]="weekMeals['Wednesday']" [day]="'Wednesday'" [view]="'month'"
                          (click)="showDate(week[2])" style="margin: 20px 5px;">
         </app-recipe-view>
 
-        <app-recipe-view class="ui-g-12 ui-md-3 ui-lg-2" [day]="'Thursday'" [view]="'month'" (click)="showDate(week[3])"
+        <app-recipe-view class="ui-g-12 ui-md-3 ui-lg-2" *ngIf="weekMeals !== null && weekMeals !== false" [meals]="weekMeals['Thursday']" [day]="'Thursday'" [view]="'month'" (click)="showDate(week[3])"
                          style="margin: 20px 5px;">
         </app-recipe-view>
 
-        <app-recipe-view class="ui-g-12 ui-md-3 ui-lg-2" [day]="'Friday'" [view]="'month'" (click)="showDate(week[4])"
+        <app-recipe-view class="ui-g-12 ui-md-3 ui-lg-2" *ngIf="weekMeals !== null && weekMeals !== false" [meals]="weekMeals['Friday']" [day]="'Friday'" [view]="'month'" (click)="showDate(week[4])"
                          style="margin: 20px 5px;">
         </app-recipe-view>
 
-        <app-recipe-view class="ui-g-12 ui-md-3 ui-lg-2" [day]="'Saturday'" [view]="'month'" (click)="showDate(week[5])"
+        <app-recipe-view class="ui-g-12 ui-md-3 ui-lg-2" *ngIf="weekMeals !== null && weekMeals !== false" [meals]="weekMeals['Saturday']" [day]="'Saturday'" [view]="'month'" (click)="showDate(week[5])"
                          style="margin: 20px 5px;">
         </app-recipe-view>
 
-        <app-recipe-view class="ui-g-12 ui-md-3 ui-lg-2" [day]="'Sunday'" [view]="'month'" (click)="showDate(week[6])"
+        <app-recipe-view class="ui-g-12 ui-md-3 ui-lg-2" *ngIf="weekMeals !== null && weekMeals !== false" [meals]="weekMeals['Sunday']" [day]="'Sunday'" [view]="'month'" (click)="showDate(week[6])"
                          style="margin: 20px 5px;">
         </app-recipe-view>
 
-        <a (click)="viewWeek()" style=" margin: 30px 20px; display: flex; flex-direction: column; align-items: center;"><i
+        <a *ngIf="weekMeals !== null && weekMeals !== false" (click)="nextWeek()"
+           style=" margin: 30px 20px; display: flex; flex-direction: column; align-items: center;"><i
           class="pi pi-arrow-right" style="font-size: 2em; color: #2B898B"></i><span style="color: #213037">RIGHT</span></a>
       </div>
 
