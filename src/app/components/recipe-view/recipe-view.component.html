@@ -1,4 +1,4 @@
-<div *ngIf="view == 'month'" style="cursor: pointer; text-align: end">
+<div class="hovermonth" *ngIf="view == 'month'" style="cursor: pointer; text-align: end">
   <div class="title" style="padding-top: 5px">
     <h3>{{day}}</h3>
   </div>
@@ -13,21 +13,39 @@
 </div>
 
 
+<div class="hovermonth" *ngIf="view == 'day'" style="cursor: pointer; text-align: end">
+  <div class="title" style="padding-top: 5px; text-transform: capitalize; display: flex; align-items: baseline; justify-content: center;">
+    <h3>{{type}}</h3>
+    <i class="pi pi-refresh" title="Reload" style="font-size: 1em; color: #213037; margin-left: 5px"></i>
+  </div>
+  <div class="ui-g">
+    <div class="content" style="height: 90px">
+      <span style="min-height: 50px">{{name}}</span>
+      <p style="">{{descr}}</p>
+    </div>
+    <hr style="width: -webkit-fill-available; border-color: orange">
+  </div>
+</div>
+
 
 <p-card *ngIf="view == 'solo'">
-  <span>{{type}}</span>
-  <span>BetterView</span>
-  <hr>
-  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
-  magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
-  gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing
-  elitr, sed diam nonumy eirmod tempor
+  <div class="title" style="padding-top: 5px">
+    <h3 style="padding-bottom: 0px; margin-bottom: 0px">{{info.key}}</h3>
+  </div>
+  <hr style="width: -webkit-fill-available; border-color: orange">
+  <div class="content">
+  <p style="letter-spacing: 0.3px;" *ngFor="let item of info.values[2]">Calories: {{(item.calories)}}<br>
+    Carbohydrate: {{item.carbohydrate}}<br>
+    Sugar: {{item.sugar}}<br>
+    Fat: {{item.fat}}<br>
+    Protein: {{item.protein}}
+  </p>
+    <hr style="width: -webkit-fill-available; border-color: orange">
 
-
-</p-card>
-
-<p-card *ngIf="view == 'day'">
-  <span>{{type}}</span><br>
-  <span>{{name}}</span>
-  <hr>
+  <p style="letter-spacing: 0.3px;" *ngFor="let item of info.values[0]">{{(item.name + ' : ' +  item.unit + ' ' + item.measurement)}} <br></p>
+    <hr style="width: -webkit-fill-available; border-color: orange">
+  <ol>
+    <li *ngFor="let item of info.values[1]">{{item.direction_description}}</li>
+  </ol>
+  </div>
 </p-card>

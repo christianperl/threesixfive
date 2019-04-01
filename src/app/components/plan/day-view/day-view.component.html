@@ -1,32 +1,31 @@
+<div class="plan-grid">
 
-<div class="day">
+  <div class="title">
+    <h1>Day</h1>
+    <span>{{date}}</span>
+  </div>
 
-  <span>{{date}}</span>
+  <div class="week" style="display: flex; justify-content: center">
 
-
-  <br><br>
-  <div class="recipies">
-
-    <app-recipe-view style="width: 300px" [view]="'day'" [type]="'Breakfast'" (click)="clickOnRecipie()"></app-recipe-view>
-    <app-recipe-view style="width: 300px" [view]="'day'" [type]="'Lunch'" (click)="clickOnRecipie()"></app-recipe-view>
-    <app-recipe-view style="width: 300px" [view]="'day'" [type]="'Dinner'" (click)="clickOnRecipie()"></app-recipe-view>
-
-
+    <div class="ui-g" style="flex-wrap: nowrap">
+      <app-recipe-view class="ui-g-12 ui-md-6 ui-lg-4" *ngFor="let item of getDailyMeal() | keyvalue"
+                       [view]="'day'" [type]=item.key
+                       [name]="item.value[0]" [descr]="item.value[1]"
+                       (click)="clickOnRecipie(item.key)">
+      </app-recipe-view>
+    </div>
 
   </div>
 
 
   <div class="recipie-view" *ngIf="recipieView">
 
-    <br>
-
-    <app-recipe-view  [view]="'solo'" styleClass="ui-card-shadow">
-
+    <app-recipe-view [view]="'solo'" [info]="getInformation()" styleClass="ui-card-shadow">
 
     </app-recipe-view>
-    <br>
-    <button pButton type="button" label="Cancel" icon="pi pi-times" class="ui-button-secondary" (click)="cancel()"></button>
 
+    <button pButton type="button" label="close" icon="pi pi-times" class="ui-button-secondary"
+            (click)="cancel()"></button>
 
   </div>
 </div>
