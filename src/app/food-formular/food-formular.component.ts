@@ -24,13 +24,13 @@ export class FoodFormularComponent implements OnInit {
   meals: SelectItem[];
 
   diets: any[];
-  selectedDiets: any;
+  selectedDiets: any = [];
 
   allergies: any[];
-  selectedAllergie: any;
+  selectedAllergie: any = [];
 
   nogos: any[];
-  selectedNogos: any;
+  selectedNogos: any = [];
 
   selectedMeals: string;
   val1 = 1;
@@ -155,6 +155,9 @@ export class FoodFormularComponent implements OnInit {
 
   // Hilfsmethode um values in objekte zu bekommen
   iterateThroughObject(Object) {
+    if (Object.isEmpty()) {
+      return Object;
+    }
     const result: any[] = [];
     for (const value of Object) {
       result.push(value.value);
@@ -222,6 +225,7 @@ export class FoodFormularComponent implements OnInit {
     this.submitted = true;
     this.router.navigate(['/plan']);
     this.formObject = {
+      'persons': this.val1,
       'diets': this.iterateThroughObject(this.selectedDiets),
       'categories': this.iterateThroughObject(this.selectedNogos),
       'allergens': this.iterateThroughObject(this.selectedAllergie),
@@ -229,6 +233,7 @@ export class FoodFormularComponent implements OnInit {
     };
 
     this.buildDays();
+    console.log(this.formObject);
     this.lumen.postForm(JSON.stringify(this.formObject)).subscribe(
       response => {
         console.log(response);

@@ -25,7 +25,6 @@ const appRoutes: Routes = [
       { path: 'list', component: ListComponent},
       { path: 'settings', component: SettingsComponent}
     ]},
-
   // otherwise redirect to home
   { path: '**', redirectTo: '' },
 

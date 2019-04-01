@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit,} from '@angular/core';
+import {Component, OnInit,} from '@angular/core';
 import {PlanService} from '../../services/plan/plan.service';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import moment from 'moment';
@@ -7,10 +7,8 @@ import {LumenService} from '../../services/lumen/lumen.service';
 
 @Component({
   selector: 'app-plan',
-  // changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './plan.component.html',
   styleUrls: ['./plan.component.scss'],
-  changeDetection: ChangeDetectionStrategy.Default,
   animations: [
     trigger('enterTrigger', [
       state('fadeIn', style({
@@ -30,6 +28,7 @@ export class PlanComponent implements OnInit {
   dateValue;
   week;
   weekMeals;
+  firstTime;
   weekNum = Number.parseInt(moment().format('w'));
   days =
     {
@@ -42,7 +41,7 @@ export class PlanComponent implements OnInit {
       'Sunday': 6
     };
   iterator = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-  constructor(private service: PlanService, private lumen: LumenService, private ref: ChangeDetectorRef) {
+  constructor(private service: PlanService, private lumen: LumenService) {
   }
 
   ngOnInit() {
@@ -58,26 +57,24 @@ export class PlanComponent implements OnInit {
       clear: 'Clear',
       dateFormat: 'dd/mm/yy'
     };
+    if (JSON.parse(localStorage.getItem('currentUser')).hasOwnProperty('init-reg')) {
+      this.firstTime = true;
+    } else {
+      this.firstTime = false;
+    }
     const b = moment().format('dddd');
     const a = this.days[b];
-    const monday = moment().subtract(a, 'days').format('YYYY-MM-DD');
     const woche = [];
     for (let i = 0; i < 7; i++) {
       woche.push(moment().add(i - a, 'days').format('YYYY-MM-DD'));
     }
     this.week = woche;
-    this.weekMeals = [];
-    let promise = new Promise<any>((resolve, reject) => {
-      this.lumen.fetchWeek(2019, this.weekNum).subscribe(
-        week => {
-          this.weekMeals = week;
-          resolve(week);
-        }
-      );
-    });
-    promise.then((week) => {
-      this.weekMeals = week;
-    });
+    this.weekMeals = null;
+    this.lumen.fetchWeek(2019, this.weekNum).subscribe(
+      week => {
+        this.weekMeals = week;
+      }
+    );
   }
 
   calenderIsClicked() {
@@ -115,6 +112,7 @@ export class PlanComponent implements OnInit {
 
   nextWeek() {
     this.weekNum++;
+    this.weekMeals = null;
     this.lumen.fetchWeek(2019, this.weekNum).subscribe(
       week => {
         this.weekMeals = week;
@@ -124,9 +122,13 @@ export class PlanComponent implements OnInit {
 
   lastWeek() {
     this.weekNum--;
+    this.weekMeals = null;
     this.lumen.fetchWeek(2019, this.weekNum).subscribe(
       week => {
         this.weekMeals = week;
+      },
+      error => {
+        this.weekMeals = false;
       }
     );
   }
