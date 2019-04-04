@@ -1,0 +1,35 @@
+<div class="plan-grid" style="margin: 0 20em">
+
+  <div class="title">
+    <h1 style="margin-bottom: 1em">Groceries</h1>
+
+    <div class="row" style="text-align: left; margin-bottom: 2em">
+      <span style="width: 50%">Item</span>
+      <span style="width: 20%">Serving</span>
+      <span style="width: 10%">Measurement</span>
+      <p-button style="opacity: 0" icon="pi pi-times" (click)="deleteGrocery(item)" disabled="true"></p-button>
+      <p-button  style="opacity: 0" icon="pi pi-check" (click)="checkGrocery(item)" disabled="true"></p-button>
+    </div>
+
+    <div *ngFor="let item of list" class="row" style="text-align: left">
+      <span style="width: 50%">{{item.name}}</span>
+      <span style="width: 20%">{{item.serving}}</span>
+      <span style="width: 10%">{{item.measurement}}</span>
+      <button pButton type="button" icon="pi pi-check" class="ui-button-secondary"
+              (click)="checkGrocery(item)"></button>
+      <button pButton type="button" style="margin-bottom: 0.3em" icon="pi pi-trash" class="ui-button-secondary"
+              (click)="deleteGrocery(item)"></button>
+    </div>
+
+    <h2>Checked</h2>
+    <div *ngFor="let item of checkedList" class="row">
+      <span style="width: 50%">{{item.name}}</span>
+      <span style="width: 20%">{{item.serving}}</span>
+      <span style="width: 10%">{{item.measurement}}</span>
+      <button pButton type="button" style="margin-bottom: 0.3em" icon="pi pi-trash" class="ui-button-secondary"
+              (click)="deleteFromCheckedGrocery(item)"></button>
+    </div>
+    <span>{{date}}</span>
+  </div>
+
+</div>

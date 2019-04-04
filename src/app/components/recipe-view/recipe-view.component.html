@@ -1,0 +1,51 @@
+<div class="hovermonth" *ngIf="view == 'month'" style="cursor: pointer; text-align: end">
+  <div class="title" style="padding-top: 5px">
+    <h3>{{day}}</h3>
+  </div>
+  <div class="ui-g" *ngFor="let item of mealNameType| keyvalue">
+    <div class="content">
+      <span>{{(item.key )}}</span>
+      <i class="pi pi-refresh" title="Reload" style="font-size: 1em; color: #213037; margin-left: 5px"></i>
+      <p style="height: 40px">{{item.value }}</p>
+      <hr style="min-width: 130px; border-color: orange">
+    </div>
+  </div>
+</div>
+
+
+<div class="hovermonth" *ngIf="view == 'day'" style="cursor: pointer; text-align: end">
+  <div class="title" style="padding-top: 5px; text-transform: capitalize; display: flex; align-items: baseline; justify-content: center;">
+    <h3>{{type}}</h3>
+    <i class="pi pi-refresh" title="Reload" style="font-size: 1em; color: #213037; margin-left: 5px"></i>
+  </div>
+  <div class="ui-g">
+    <div class="content" style="height: 90px">
+      <span style="min-height: 50px">{{name}}</span>
+      <p style="">{{descr}}</p>
+    </div>
+    <hr style="width: -webkit-fill-available; border-color: orange">
+  </div>
+</div>
+
+
+<p-card *ngIf="view == 'solo'">
+  <div class="title" style="padding-top: 5px">
+    <h3 style="padding-bottom: 0px; margin-bottom: 0px">{{info.key}}</h3>
+  </div>
+  <hr style="width: -webkit-fill-available; border-color: orange">
+  <div class="content">
+  <p style="letter-spacing: 0.3px;" *ngFor="let item of info.values[2]">Calories: {{(item.calories)}}<br>
+    Carbohydrate: {{item.carbohydrate}}<br>
+    Sugar: {{item.sugar}}<br>
+    Fat: {{item.fat}}<br>
+    Protein: {{item.protein}}
+  </p>
+    <hr style="width: -webkit-fill-available; border-color: orange">
+
+  <p style="letter-spacing: 0.3px;" *ngFor="let item of info.values[0]">{{(item.name + ' : ' +  item.unit + ' ' + item.measurement)}} <br></p>
+    <hr style="width: -webkit-fill-available; border-color: orange">
+  <ol>
+    <li *ngFor="let item of info.values[1]">{{item.direction_description}}</li>
+  </ol>
+  </div>
+</p-card>

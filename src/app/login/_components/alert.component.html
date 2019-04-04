@@ -1,0 +1,4 @@
+﻿
+<p-toast [style]="{marginTop: '80px'}">
+  <div *ngIf="message" [ngClass]="{ 'alert': message, 'alert-success': message.type === 'success', 'alert-danger': message.type === 'error' }">{{message.text}}</div>
+</p-toast>

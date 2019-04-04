@@ -1,0 +1,33 @@
+<div class="plan-grid">
+
+  <div class="title">
+    <h1>Day</h1>
+    <span>{{date}}</span>
+  </div>
+
+  <div class="week" style="display: flex; justify-content: center">
+
+    <div class="ui-g" style="flex-wrap: nowrap">
+      <app-recipe-view class="ui-g-12 ui-md-6 ui-lg-4" *ngFor="let item of dailyMeal | keyvalue"
+                       [view]="'day'" [type]=item.key
+                       [name]="item.value[0]" [descr]="item.value[1]"
+                       (click)="clickOnRecipie(item.key)">
+      </app-recipe-view>
+    </div>
+
+  </div>
+
+
+  <div class="recipie-view" *ngIf="recipieView">
+
+    <app-recipe-view [view]="'solo'" [info]="getSpecificInformation()" styleClass="ui-card-shadow">
+
+    </app-recipe-view>
+
+    <!--<button pButton style="" type="button" label="close" icon="pi pi-times" class="ui-button-secondary"
+            (click)="cancel()"></button>-->
+
+  </div>
+</div>
+
+
