@@ -1,0 +1,35 @@
+.user-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 10px 20em;
+}
+
+.ui-tabview {
+  :link, :visited, :hover, :active {
+    color: #005b5e
+  }
+}
+
+.ui-tabview-nav {
+  :link, :visited, :hover, :active {
+    color: #005b5e
+  }
+}
+
+.ui-tabview-selected {
+  :link, :visited, :hover, :active {
+    color: #005b5e
+  }
+}
+
+.ui-tabview-panels {
+}
+
+.ui-tabview-panel {
+}

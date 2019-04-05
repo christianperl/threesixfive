@@ -1,0 +1,244 @@
+import {Component, OnInit} from '@angular/core';
+import {first, map} from 'rxjs/operators';
+import {Router} from '@angular/router';
+import {SelectItem} from 'primeng/api';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {forEach} from '@angular/router/src/utils/collection';
+import {AuthenticationService} from '../login/_services';
+import {PlanService} from '../services/plan/plan.service';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {environment} from '../../environments/environment';
+import {LumenService} from '../services/lumen/lumen.service';
+
+@Component({
+  selector: 'app-food-formular',
+  templateUrl: './food-formular.component.html',
+  styleUrls: ['./food-formular.component.scss']
+})
+export class FoodFormularComponent implements OnInit {
+
+  foodForm: FormGroup;
+
+  submitted: boolean;
+  loading = false;
+
+  meals: SelectItem[];
+
+  diets: any[];
+  selectedDiets: any;
+
+  allergies: any[];
+  selectedAllergie: any;
+
+  nogos: any[];
+  selectedNogos: any;
+
+  selectedMeals: string;
+  val1 = 1;
+
+  days;
+  checkmonday: boolean = false;
+  checktuesday: boolean = false;
+  checkwednesday: boolean = false;
+  checkthursday: boolean = false;
+  checkfriday: boolean = false;
+  checksaturday: boolean = false;
+  checksunday: boolean = false;
+  checkedObj: object = {
+  'checked11': true,
+  'checked21': true,
+  'checked31': true,
+  'checked41': true,
+  'checked12': true,
+  'checked22': true,
+  'checked32': true,
+  'checked42': true,
+  'checked13': true,
+  'checked23': true,
+  'checked33': true,
+  'checked43': true,
+  'checked14': true,
+  'checked24': true,
+  'checked34': true,
+  'checked44': true,
+  'checked15': true,
+  'checked25': true,
+  'checked35': true,
+  'checked45': true,
+  'checked16': true,
+  'checked26': true,
+  'checked36': true,
+  'checked46': true,
+  'checked17': true,
+  'checked27': true,
+  'checked37': true,
+  'checked47': true
+};
+  formObject;
+
+  constructor(
+    private router: Router,    private planService: PlanService,
+    private lumen: LumenService
+  ) {
+
+    this.meals = [
+      {label: 'Breakfast', value: 'Breakfast'},
+      {label: 'Lunch', value: 'Lunch'},
+      {label: 'Dinner', value: 'Dinner'},
+      {label: 'Snack', value: 'Snack'}
+    ];
+
+    this.diets = [
+      {label: 'Dairy Free', value: 'Dairy Free', diet: 'diary_free.svg'},
+      {label: 'Gluten Free', value: 'Gluten Free', diet: 'gluten_free.svg'},
+      {label: 'High Protein', value: 'High Protein', diet: 'high_protein.svg'},
+      {label: 'Low Calorie', value: 'Low Calorie', diet: 'low_kcal.svg'},
+      {label: 'Low Carb', value: 'Low Carb', diet: 'low_carb.svg'}
+    ];
+
+    this.allergies = [
+      {label: 'Celery', value: 'Celery', name: 'Celery', allergen: 'celery.svg'},
+      {label: 'Crustaceans', value: 'Crustaceans', name: 'Crustaceans', allergen: 'crustaceans.svg'},
+      {label: 'Egg', value: 'Egg', name: 'Egg', allergen: 'egg.svg'},
+      {label: 'Fish', value: 'Fish', name: 'Fish', allergen: 'fish.svg'},
+      {label: 'Gluten', value: 'Gluten', name: 'Gluten', allergen: 'gluten.svg'},
+      {label: 'Lupines', value: 'Lupines', name: 'Lupines', allergen: 'lupines.svg'},
+      {label: 'Lactose', value: 'Lactose', name: 'Lactose', allergen: 'milk.svg'},
+      {label: 'Molluscs', value: 'Molluscs', name: 'Molluscs', allergen: 'molluscs.svg'},
+      {label: 'Mustard', value: 'Mustard', name: 'Mustard', allergen: 'mustard.svg'},
+      {label: 'Nuts', value: 'Nuts', name: 'Nuts', allergen: 'nuts.svg'},
+      {label: 'Peanuts', value: 'Peanuts', name: 'Peanuts', allergen: 'peanuts.svg'},
+      {label: 'Sesame', value: 'Sesame', name: 'Sesame', allergen: 'sesame.svg'},
+      {label: 'Soy', value: 'Soy', name: 'Soy', allergen: 'soy.svg'},
+      {label: 'Sulphites', value: 'Sulphites', name: 'Sulphites', allergen: 'sulphites.svg'}
+    ];
+
+    this.nogos = [
+      {value: 'Beef', label: 'Beef', name: 'Beef', nogo: 'beef.svg'},
+      {value: 'Broccoli', label: 'Broccoli', name: 'Broccoli', nogo: 'broccoli.svg'},
+      {value: 'Cabbage', label: 'Cabbage', name: 'Cabbage', nogo: 'cabbage.svg'},
+      {value: 'Fish', label: 'Fish', name: 'Fish', nogo: 'fish.svg'},
+      {value: 'Lamb', label: 'Lamb', name: 'Lamb', nogo: 'lamb.svg'},
+      {value: 'Licorice', label: 'Licorice', name: 'Licorice', nogo: 'licorice.svg'},
+      {value: 'Mushrooms', label: 'Mushrooms', name: 'Mushrooms', nogo: 'mushrooms.svg'},
+      {value: 'Nuts', label: 'Nuts', name: 'Nuts', nogo: 'nuts.svg'},
+      {value: 'Pork', label: 'Pork', name: 'Pork', nogo: 'pork.svg'},
+      {value: 'Raisin', label: 'Raisin', name: 'Raisin', nogo: 'raisin.svg'},
+      {value: 'Seafood', label: 'Seafood', name: 'Seafood', nogo: 'seafood.svg'},
+      {value: 'Soy Milk', label: 'Soy Milk', name: 'Soy Milk', nogo: 'soy_drink.svg'},
+      {value: 'Soy Nuts', label: 'Soy Nuts', name: 'Soy Nuts', nogo: 'soy_nuts.svg'},
+      {value: 'Soy Sauce', label: 'Soy Sauce', name: 'Soy Sauce', nogo: 'soy_sauce.svg'},
+      {value: 'Soy Yogurt', label: 'Soy Yogurt', name: 'Soy Yogurt', nogo: 'soy_yoghurt.svg'},
+      {value: 'Tofu', label: 'Tofu', name: 'Tofu', nogo: 'tofu.svg'},
+      {value: 'Tomatoes', label: 'Tomatoes', name: 'Tomatoes', nogo: 'tomatoes.svg'}
+    ];
+  }
+  clear() {
+    this.selectedMeals = null;
+  }
+  clearCheckedMeals() {
+    const dayModels = [this.checkmonday, this.checktuesday, this.checkwednesday, this.checkthursday,
+      this.checkfriday, this.checksaturday, this.checksunday];
+    const mealModels  = [this.checkedObj[1], this.checkedObj[2], this.checkedObj[3], this.checkedObj[4]];
+    for (let a = 0 ; a < mealModels.length; a++) {
+      if (!dayModels[0]) {
+        mealModels[a] = false;
+      }
+    }
+  }
+
+  ngOnInit() {
+    this.foodForm = new FormGroup(
+      {
+        persons: new FormControl()
+      });
+  }
+
+  // Hilfsmethode um values in objekte zu bekommen
+  iterateThroughObject(Object) {
+    const result: any[] = [];
+    for (const value of Object) {
+      result.push(value.value);
+    }
+    return result;
+  }
+
+  buildDays() {
+    const booleanDays = [this.checkmonday, this.checktuesday, this.checkwednesday, this.checkthursday,
+      this.checkfriday, this.checksaturday, this.checksunday];
+    const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+    const clickedDays = [];
+    const helper = {
+      'Monday': 1,
+      'Tuesday': 2,
+      'Wednesday': 3,
+      'Thursday': 4,
+      'Friday': 5,
+      'Saturday': 6,
+      'Sunday': 7
+    };
+    for (let i = 0; i < days.length; i++) {
+      if (booleanDays[i] === true) {
+        clickedDays.push(days[i]);
+      }
+    }
+    const meals = ['breakfast', 'lunch', 'main dish', 'snack'];
+    const checkedMeals = [];
+    const result = new Map();
+
+    for (let x = 0; x < booleanDays.length; x++) {
+      if (booleanDays[x] === true) {
+        for (let a = 1; a < 5; a++) {
+          if (this.checkedObj['checked' + a + (x + 1) ] === true) {
+            checkedMeals.push('checked' + a + (x + 1) );
+          }
+        }
+      }
+    }
+    for (let a = 0; a < clickedDays.length; a++) {
+      for (let b = 0; b < checkedMeals.length; b++) {
+        if (checkedMeals[b].charAt(8) == helper[clickedDays[a]]) {
+          if (result.has(clickedDays[a])) {
+            let types =  result.get(clickedDays[a]);
+            types.push(meals[(checkedMeals[b].charAt(7)) - 1]);
+            result.set(clickedDays[a], types);
+          } else {
+            result.set(clickedDays[a], Array.of(meals[(checkedMeals[b].charAt(7)) - 1] ));
+          }
+        }
+      }
+    }
+    return result;
+  }
+  MaptoJson (map) {
+    const result = [];
+    map.forEach((value, key) => {
+      result.push({ weekday: key, meals: value });
+    });
+
+    return result;
+  }
+
+  onSubmit(value: string) {
+    this.submitted = true;
+    this.loading = true;
+    //this.router.navigate(['/plan']);
+    this.formObject = {
+      'diets': this.iterateThroughObject(this.selectedDiets),
+      'categories': this.iterateThroughObject(this.selectedNogos),
+      'allergens': this.iterateThroughObject(this.selectedAllergie),
+      'plan': this.MaptoJson(this.buildDays())
+    };
+
+    this.buildDays();
+    this.lumen.postForm(JSON.stringify(this.formObject)).subscribe(
+      response => {
+        console.log(response);
+        this.router.navigate(['/plan']);
+      }
+    );
+  }
+
+
+}
+

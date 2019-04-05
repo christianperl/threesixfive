@@ -1,0 +1,41 @@
+<!--
+<form class="example-form">
+  <mat-form-field class="example-full-width" >
+    <input matInput placeholder="Grocery Name" [(ngModel)]="name" [ngModelOptions]="{standalone: true}">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width" >
+    <input type="number" min="0" matInput placeholder="Amount" [(ngModel)]="amount" [ngModelOptions]="{standalone: true}">
+  </mat-form-field>
+
+
+    <mat-form-field>
+      <select matNativeControl required [(ngModel)]="unit"  placeholder="Unit" [ngModelOptions]="{standalone: true}">
+        <option value="litre">litre</option>
+        <option value="gram">gram</option>
+
+      </select>
+  </mat-form-field>
+  <button mat-icon-button (click)="addToList()">
+    <i class="material-icons">add_circle</i>
+  </button>
+</form>
+-->
+
+<form class="example-form">
+  <div class="ui-inputgroup">
+    <input type="text" [(ngModel)]="name"  placeholder="Grocery">
+  </div>
+  <div class="ui-inputgroup">
+
+    <p-spinner size="30" [(ngModel)]="amount"></p-spinner>
+  </div>
+
+  <div class="ui-inputgroup">
+    <p-radioButton name="groupname" value="litre" [(ngModel)]="unit">litre</p-radioButton><br>
+    <p-radioButton name="groupname" value="gram" [(ngModel)]="unit">gram</p-radioButton>
+  </div>
+
+  <p-button (click)="addToList()"></p-button>
+
+</form>

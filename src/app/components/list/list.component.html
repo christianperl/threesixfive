@@ -1,0 +1,65 @@
+
+
+<div class="plan-grid" style="margin: 0 20em">
+
+    <div class="title">
+        <h1 style="margin-bottom: 1em">Groceries</h1>
+
+        <div class="row" style="text-align: left; margin-bottom: 2em; text-decoration: underline;">
+            <span style="width: 50%">Item</span>
+            <span style="width: 20%">Serving</span>
+            <span style="width: 10%">Measurement</span>
+            <p-button style="opacity: 0" icon="pi pi-times" (click)="deleteGrocery(item)" disabled="true"></p-button>
+            <p-button style="opacity: 0" icon="pi pi-check" (click)="checkGrocery(item)" disabled="true"></p-button>
+        </div>
+
+        <div class="newEntry" style="display: flex;margin-bottom: 1em;margin-top: -1em; width: 60%;">
+            <button *ngIf="!entry" pButton type="button" icon="pi pi-plus" class="ui-button-secondary" (click)="openEntry()"></button>
+            <button *ngIf="entry" pButton type="button" icon="pi pi-times" class="ui-button-secondary" (click)="closeEntry()"></button>            <div class="entryform" *ngIf="entry" style="display: flex; justify-content: space-around; width: 100%">
+                <input type="text" [(ngModel)]="name" pInputText placeholder="Name"/>
+                <input type="number" [(ngModel)]="serving" pInputText placeholder="Serving">
+                <input type="text" [(ngModel)]="measurement" pInputText placeholder="Gram">
+                <button pButton type="button" icon="pi pi-check" class="ui-button-secondar" (click)="addGrocery()"></button>
+            </div>
+        </div>
+
+        <div *ngFor="let item of list" class="row" style="text-align: left">
+            <span style="width: 50%">{{item.name}}</span>
+            <span style="width: 20%">{{item.serving|number}}</span>
+            <span style="width: 10%">{{item.measurement}}</span>
+            <button pButton type="button" icon="pi pi-check" class="ui-button-secondary"
+                    (click)="checkGrocery(item)"></button>
+            <button pButton type="button" icon="pi pi-pencil" class="ui-button-secondary"
+                    (click)="openEditGrocery(item)"></button>
+            <button pButton type="button" style="margin-bottom: 0.3em" icon="pi pi-trash" class="ui-button-secondary"
+                    (click)="deleteGrocery(item)"></button>
+        </div>
+        <p-dialog header="Edit {{editName}}" [(visible)]="display" [modal]="true" closeIcon = "" [draggable]="false" [responsive]="true" [style]="{width: '350px', minWidth: '200px'}" [minY]="70"
+                  [baseZIndex]="10000">
+            <div style="width: 100%">
+                <input style="width: 100%" type="text" [(ngModel)]="editName" pInputText placeholder="Name"/>
+                <input style="width: 100%"type="number" [(ngModel)]="editServing" pInputText placeholder="Serving">
+                <input style="width: 100%" type="text" [(ngModel)]="editMeasurement" pInputText placeholder="Measurement">
+            </div>
+            <p-footer>
+                <button type="button" pButton icon="pi pi-check" (click)="editGrocery()" label="Yes"></button>
+                <button type="button" pButton icon="pi pi-close" (click)="display=false" label="No" class="ui-button-secondary"></button>
+            </p-footer>
+        </p-dialog>
+
+        <div class="row" style="justify-content: center; align-items: baseline;">
+            <h2 style="margin-top: 3em;">Checked</h2>
+            <button style="justify-self: flex-end" pButton type="button" style="margin-bottom: 0.3em" icon="pi pi-trash"
+                    class="ui-button-secondary"
+                    (click)="deleteFromCheckedGrocery()"></button>
+        </div>
+        <div *ngFor="let item of checkedList" class="row">
+            <span style="width: 50%; text-decoration: line-through;">{{item.name}}</span>
+            <span style="width: 20%">{{item.serving|number}}</span>
+            <span style="width: 20%">{{item.measurement}}</span>
+        </div>
+    </div>
+
+</div>
+
+
